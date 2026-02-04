@@ -71,6 +71,7 @@ export default function RootLayout({
                 </NavbarDropdown>
 
                 <NavbarLink href="/">Customers</NavbarLink>
+                <NavbarLink href="/docs">Docs</NavbarLink>
 
                 <NavbarDropdown label="Resources">
                   <NavbarDropdownItem href="/security" title="Security" />
@@ -102,6 +103,7 @@ export default function RootLayout({
                 </NavbarDropdownMobile>
 
                 <NavbarLink href="/">Customers</NavbarLink>
+                <NavbarLink href="/docs">Docs</NavbarLink>
 
                 <NavbarDropdownMobile label="Resources" id="resources">
                   <NavbarDropdownItemMobile href="/security" title="Security" />

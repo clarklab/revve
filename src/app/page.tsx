@@ -389,7 +389,18 @@ export default function Page() {
         />
       </TestimonialThreeColumnGrid>
       {/* FAQs */}
-      <FAQsTwoColumnAccordion id="faqs" headline="Questions & Answers">
+      <FAQsTwoColumnAccordion
+        id="faqs"
+        headline="Questions & Answers"
+        subheadline={
+          <>
+            <p>Find detailed answers and implementation guides in our documentation.</p>
+            <div>
+              <SoftButtonLink href="/docs">View the Docs</SoftButtonLink>
+            </div>
+          </>
+        }
+      >
         <Faq
           id="faq-1"
           question="Can Revve be deployed on-premise, or is it cloud-only?"
