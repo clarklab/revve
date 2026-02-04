@@ -1,0 +1,49 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: 'Instrument Sans', sans-serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'Monaspace Krypton', ui-monospace, monospace;
+
+  --color-taupe-50: oklch(97% 0.02 265);
+  --color-taupe-100: oklch(94% 0.04 265);
+  --color-taupe-200: oklch(88% 0.08 265);
+  --color-taupe-300: oklch(78% 0.14 265);
+  --color-taupe-400: oklch(65% 0.20 265);
+  --color-taupe-500: oklch(55% 0.26 265);
+  --color-taupe-600: oklch(50% 0.28 265);
+  --color-taupe-700: oklch(45% 0.26 265);
+  --color-taupe-800: oklch(40% 0.24 265);
+  --color-taupe-900: oklch(35% 0.22 265);
+  --color-taupe-950: oklch(45% 0.26 265);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-taupe-100);
+    --scroll-padding-top: 0;
+    scroll-padding-top: var(--scroll-padding-top);
+
+    @variant dark {
+      background-color: var(--color-taupe-950);
+    }
+  }
+
+  html.dark-page header {
+    background-color: #151528 !important;
+  }
+
+  html.dark-page footer {
+    background-color: #151528 !important;
+  }
+}
+
+@layer utilities {
+  .logo-monotone {
+    filter: brightness(0) saturate(100%) invert(24%) sepia(90%) saturate(2000%) hue-rotate(220deg) brightness(100%);
+  }
+}
