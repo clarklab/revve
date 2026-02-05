@@ -10,9 +10,9 @@ export function Stat({
   ...props
 }: { stat: ReactNode; text: ReactNode } & ComponentProps<'div'>) {
   return (
-    <div className={clsx('rounded-xl bg-taupe-950/2.5 p-6 dark:bg-white/5', className)} {...props}>
-      <div className="text-2xl/10 tracking-tight text-taupe-950 dark:text-white">{stat}</div>
-      <p className="mt-2 text-sm/7 text-taupe-700 dark:text-taupe-400">{text}</p>
+    <div className={clsx('rounded-xl bg-brand-600/5 p-6 dark:bg-white/5', className)} {...props}>
+      <div className="text-2xl/10 tracking-tight text-brand-950 dark:text-white">{stat}</div>
+      <p className="mt-2 text-sm/7 text-brand-700 dark:text-brand-400">{text}</p>
     </div>
   )
 }
@@ -31,10 +31,10 @@ export function StatsThreeColumnWithDescription({
     <section className={clsx('py-16', className)} {...props}>
       <Container>
         <div className="relative flex flex-col gap-10 sm:gap-16">
-          <hr className="absolute inset-x-0 -top-16 border-t border-taupe-950/10 dark:border-white/10" />
+          <hr className="absolute inset-x-0 -top-16 border-t border-brand-950/10 dark:border-white/10" />
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
             <Subheading>{heading}</Subheading>
-            <div className="flex max-w-xl flex-col gap-4 text-base/7 text-taupe-700 dark:text-taupe-400">
+            <div className="flex max-w-xl flex-col gap-4 text-base/7 text-brand-700 dark:text-brand-400">
               {description}
             </div>
           </div>

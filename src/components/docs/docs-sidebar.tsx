@@ -74,7 +74,7 @@ export function DocsSidebar({ sections, contentId }: { sections: DocSection[]; c
       <aside
         ref={sidebarRef}
         className={clsx(
-          'fixed top-[calc(var(--scroll-padding-top)+1.5rem)] hidden w-56 overflow-y-auto rounded-xl border border-taupe-200 bg-taupe-50 px-3 py-4 shadow-sm transition-opacity duration-200 lg:block dark:border-taupe-800 dark:bg-taupe-900',
+          'fixed top-[calc(var(--scroll-padding-top)+1.5rem)] hidden w-56 overflow-y-auto rounded-xl border border-brand-200 bg-brand-50 px-3 py-4 shadow-sm transition-opacity duration-200 lg:block dark:border-brand-800 dark:bg-brand-900',
           'left-[max(1.5rem,calc(50%-38rem))]',
           isVisible ? 'opacity-100' : 'pointer-events-none opacity-0'
         )}
@@ -89,8 +89,8 @@ export function DocsSidebar({ sections, contentId }: { sections: DocSection[]; c
               className={clsx(
                 'rounded-lg px-3 py-2 text-sm font-medium transition-colors',
                 activeSection === section.id
-                  ? 'bg-taupe-200 text-taupe-950 dark:bg-white/10 dark:text-white'
-                  : 'text-taupe-600 hover:bg-taupe-100 hover:text-taupe-950 dark:text-taupe-400 dark:hover:bg-white/5 dark:hover:text-white'
+                  ? 'bg-brand-200 text-brand-950 dark:bg-white/10 dark:text-white'
+                  : 'text-brand-600 hover:bg-brand-100 hover:text-brand-950 dark:text-brand-400 dark:hover:bg-white/5 dark:hover:text-white'
               )}
             >
               {section.title}
@@ -100,10 +100,10 @@ export function DocsSidebar({ sections, contentId }: { sections: DocSection[]; c
       </aside>
 
       {/* Mobile Dropdown */}
-      <div className="fixed left-0 right-0 top-[--scroll-padding-top] z-10 border-b border-taupe-200 bg-taupe-100 px-6 py-3 lg:hidden dark:border-taupe-800 dark:bg-taupe-950">
+      <div className="fixed left-0 right-0 top-[--scroll-padding-top] z-10 border-b border-brand-200 bg-brand-50 px-6 py-3 lg:hidden dark:border-brand-800 dark:bg-brand-950">
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="flex w-full items-center justify-between rounded-lg border border-taupe-200 bg-taupe-50 px-4 py-2.5 text-sm font-medium text-taupe-950 dark:border-taupe-700 dark:bg-taupe-900 dark:text-white"
+          className="flex w-full items-center justify-between rounded-lg border border-brand-200 bg-white px-4 py-2.5 text-sm font-medium text-brand-950 dark:border-brand-700 dark:bg-brand-900 dark:text-white"
         >
           <span>{activeTitle}</span>
           <svg
@@ -118,7 +118,7 @@ export function DocsSidebar({ sections, contentId }: { sections: DocSection[]; c
         </button>
 
         {mobileMenuOpen && (
-          <nav className="absolute left-0 right-0 top-full border-b border-taupe-200 bg-taupe-50 px-6 py-2 shadow-lg dark:border-taupe-800 dark:bg-taupe-900">
+          <nav className="absolute left-0 right-0 top-full border-b border-brand-200 bg-white px-6 py-2 shadow-lg dark:border-brand-800 dark:bg-brand-900">
             {sections.map((section) => (
               <a
                 key={section.id}
@@ -127,8 +127,8 @@ export function DocsSidebar({ sections, contentId }: { sections: DocSection[]; c
                 className={clsx(
                   'block rounded-lg px-4 py-2 text-sm font-medium transition-colors',
                   activeSection === section.id
-                    ? 'bg-taupe-200 text-taupe-950 dark:bg-white/10 dark:text-white'
-                    : 'text-taupe-600 hover:bg-taupe-100 hover:text-taupe-950 dark:text-taupe-400 dark:hover:bg-white/5 dark:hover:text-white'
+                    ? 'bg-brand-200 text-brand-950 dark:bg-white/10 dark:text-white'
+                    : 'text-brand-600 hover:bg-brand-100 hover:text-brand-950 dark:text-brand-400 dark:hover:bg-white/5 dark:hover:text-white'
                 )}
               >
                 {section.title}

@@ -21,7 +21,7 @@ function FeatureGroup<Plan extends string>({
         <th
           colSpan={plans.length + 1}
           scope="colgroup"
-          className="border-t border-b border-t-taupe-950/5 border-b-taupe-950/10 pt-14 pb-4 font-semibold text-taupe-950 dark:border-t-white/5 dark:border-b-white/10 dark:text-white"
+          className="border-t border-b border-t-brand-950/5 border-b-brand-950/10 pt-14 pb-4 font-semibold text-brand-950 dark:border-t-white/5 dark:border-b-white/10 dark:text-white"
         >
           {group.title}
         </th>
@@ -30,7 +30,7 @@ function FeatureGroup<Plan extends string>({
         <tr key={String(feature.name)} className="group">
           <th
             scope="row"
-            className="border-t border-taupe-950/5 py-4 pr-3 font-normal text-taupe-700 group-first:border-taupe-950/10 dark:border-white/5 dark:text-taupe-400 dark:group-first:border-white/10"
+            className="border-t border-brand-950/5 py-4 pr-3 font-normal text-brand-700 group-first:border-brand-950/10 dark:border-white/5 dark:text-brand-400 dark:group-first:border-white/10"
           >
             {feature.name}
           </th>
@@ -43,12 +43,12 @@ function FeatureGroup<Plan extends string>({
             return (
               <td
                 key={plan}
-                className="border-t border-taupe-950/5 px-3 py-4 text-center text-taupe-700 group-first:border-taupe-950/10 dark:border-white/10 dark:text-taupe-400 dark:group-first:border-white/10"
+                className="border-t border-brand-950/5 px-3 py-4 text-center text-brand-700 group-first:border-brand-950/10 dark:border-white/10 dark:text-brand-400 dark:group-first:border-white/10"
               >
                 {value === true ? (
-                  <CheckmarkIcon aria-label="Included" className="stroke-taupe-950 dark:stroke-white" />
+                  <CheckmarkIcon aria-label="Included" className="stroke-brand-950 dark:stroke-white" />
                 ) : value === false ? (
-                  <MinusIcon aria-label="Not included" className="stroke-taupe-950 dark:stroke-white" />
+                  <MinusIcon aria-label="Not included" className="stroke-brand-950 dark:stroke-white" />
                 ) : (
                   value
                 )}
@@ -85,13 +85,13 @@ export function PlanComparisonTable<const Plan extends string>({
           </colgroup>
           <thead>
             <tr>
-              <th className="sticky top-(--scroll-padding-top) bg-taupe-100 py-5 pr-3 text-base/7 font-medium text-taupe-950 dark:bg-taupe-950 dark:text-white">
+              <th className="sticky top-(--scroll-padding-top) bg-brand-100 py-5 pr-3 text-base/7 font-medium text-brand-950 dark:bg-brand-950 dark:text-white">
                 Compare features
               </th>
               {plans.map((plan, index) => (
                 <th
                   key={index}
-                  className="sticky top-(--scroll-padding-top) bg-taupe-100 p-3 text-center font-semibold text-taupe-950 dark:bg-taupe-950 dark:text-white"
+                  className="sticky top-(--scroll-padding-top) bg-brand-100 p-3 text-center font-semibold text-brand-950 dark:bg-brand-950 dark:text-white"
                 >
                   {plan}
                 </th>
@@ -110,7 +110,7 @@ export function PlanComparisonTable<const Plan extends string>({
                 <button
                   key={plan}
                   type="button"
-                  className="relative -mb-px flex-1 border-b border-b-transparent px-2 py-6 text-sm/5 font-medium text-taupe-500 aria-selected:border-taupe-950 aria-selected:text-taupe-950 dark:aria-selected:border-white dark:aria-selected:text-white"
+                  className="relative -mb-px flex-1 border-b border-b-transparent px-2 py-6 text-sm/5 font-medium text-brand-500 aria-selected:border-brand-950 aria-selected:text-brand-950 dark:aria-selected:border-white dark:aria-selected:text-white"
                 >
                   {plan}
                 </button>

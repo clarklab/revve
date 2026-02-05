@@ -19,8 +19,8 @@ export function TeamMember({
         {img}
       </div>
       <div>
-        <p className="font-semibold text-taupe-950 dark:text-white">{name}</p>
-        <p className="text-taupe-700 dark:text-taupe-400">{byline}</p>
+        <p className="font-semibold text-brand-950 dark:text-white">{name}</p>
+        <p className="text-brand-700 dark:text-brand-400">{byline}</p>
       </div>
     </li>
   )

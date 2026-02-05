@@ -18,7 +18,7 @@ export function FooterCategory({ title, children, ...props }: { title: ReactNode
 
 export function FooterLink({ href, className, ...props }: { href: string } & Omit<ComponentProps<'a'>, 'href'>) {
   return (
-    <li className={clsx('text-taupe-700 dark:text-taupe-400', className)}>
+    <li className={clsx('text-brand-700 dark:text-brand-400', className)}>
       <Link href={href} {...props} />
     </li>
   )
@@ -38,7 +38,7 @@ export function SocialLink({
       href={href}
       target="_blank"
       aria-label={name}
-      className={clsx('text-taupe-950 *:size-6 dark:text-white', className)}
+      className={clsx('text-brand-900 *:size-6 dark:text-white', className)}
       {...props}
     />
   )
@@ -56,18 +56,18 @@ export function NewsletterForm({
   return (
     <form className={clsx('flex max-w-sm flex-col gap-2', className)} {...props}>
       <p>{headline}</p>
-      <div className="flex flex-col gap-4 text-taupe-700 dark:text-taupe-400">{subheadline}</div>
-      <div className="flex items-center border-b border-taupe-950/20 py-2 has-[input:focus]:border-taupe-950 dark:border-white/20 dark:has-[input:focus]:border-white">
+      <div className="flex flex-col gap-4 text-brand-700 dark:text-brand-400">{subheadline}</div>
+      <div className="flex items-center border-b border-brand-600/20 py-2 has-[input:focus]:border-brand-600 dark:border-white/20 dark:has-[input:focus]:border-white">
         <input
           type="email"
           placeholder="Email"
           aria-label="Email"
-          className="flex-1 text-taupe-950 focus:outline-hidden dark:text-white"
+          className="flex-1 text-brand-900 focus:outline-hidden dark:text-white"
         />
         <button
           type="submit"
           aria-label="Subscribe"
-          className="relative inline-flex size-7 items-center justify-center rounded-full after:absolute after:-inset-2 hover:bg-taupe-950/10 dark:hover:bg-white/10 after:pointer-fine:hidden"
+          className="relative inline-flex size-7 items-center justify-center rounded-full after:absolute after:-inset-2 hover:bg-brand-600/10 dark:hover:bg-white/10 after:pointer-fine:hidden"
         >
           <ArrowNarrowRightIcon />
         </button>
@@ -93,7 +93,7 @@ export function FooterWithNewsletterFormCategoriesAndSocialIcons({
 } & ComponentProps<'footer'>) {
   return (
     <footer className={clsx('pt-16', className)} {...props}>
-      <div className="bg-taupe-950/2.5 py-16 text-taupe-950 dark:bg-white/5 dark:text-white">
+      <div className="bg-brand-600/5 py-16 text-brand-950 dark:bg-white/5 dark:text-white">
         <Container className="flex flex-col gap-16">
           <div className="grid grid-cols-1 gap-x-6 gap-y-16 text-sm/7 lg:grid-cols-2">
             {cta}
@@ -104,7 +104,7 @@ export function FooterWithNewsletterFormCategoriesAndSocialIcons({
           <div className="flex items-center justify-between gap-10 text-sm/7">
             <div className="flex items-center gap-4">
               {logo}
-              <div className="text-taupe-600 dark:text-taupe-500">{fineprint}</div>
+              <div className="text-brand-600 dark:text-brand-500">{fineprint}</div>
             </div>
             {socialLinks && <div className="flex items-center gap-4 sm:gap-10">{socialLinks}</div>}
           </div>

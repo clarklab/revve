@@ -18,7 +18,7 @@ export function Testimonial({
   return (
     <figure
       className={clsx(
-        'flex flex-col justify-between gap-10 rounded-md bg-taupe-950/2.5 p-6 text-sm/7 text-taupe-950 dark:bg-white/5 dark:text-white',
+        'flex flex-col justify-between gap-10 rounded-md bg-brand-600/5 p-6 text-sm/7 text-brand-950 dark:bg-white/5 dark:text-white',
         className,
       )}
       {...props}
@@ -32,7 +32,7 @@ export function Testimonial({
         </div>
         <div>
           <p className="font-semibold">{name}</p>
-          <p className="text-taupe-700 dark:text-taupe-400">{byline}</p>
+          <p className="text-brand-700 dark:text-brand-400">{byline}</p>
         </div>
       </figcaption>
     </figure>
