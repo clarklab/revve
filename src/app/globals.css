@@ -40,10 +40,21 @@
     background-color: var(--color-taupe-100);
     --scroll-padding-top: 0;
     scroll-padding-top: var(--scroll-padding-top);
+    accent-color: var(--color-brand-600);
 
     @variant dark {
       background-color: var(--color-taupe-950);
     }
+  }
+
+  ::selection {
+    background-color: var(--color-brand-200);
+    color: var(--color-brand-900);
+  }
+
+  .dark ::selection {
+    background-color: var(--color-brand-800);
+    color: var(--color-brand-100);
   }
 
   html.dark-page header {
