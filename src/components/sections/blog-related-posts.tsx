@@ -20,7 +20,7 @@ export function BlogRelatedPosts({
         <Subheading className="mb-10">Continue reading</Subheading>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
-            <BlogCard key={post.slug} slug={post.slug} title={post.title} category={post.category} excerpt={post.excerpt} image={post.image} />
+            <BlogCard key={post.slug} slug={post.slug} title={post.title} category={post.category} image={post.image} />
           ))}
         </div>
       </Container>
