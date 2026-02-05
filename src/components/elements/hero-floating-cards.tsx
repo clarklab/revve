@@ -120,21 +120,21 @@ function CallCard() {
       {/* Header */}
       <div className="flex items-center justify-between gap-6">
         <div className="flex items-center gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100">
-            <PhoneIcon className="h-6 w-6 text-blue-600" />
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-100">
+            <PhoneIcon className="h-6 w-6 text-brand-600" />
           </div>
           <div>
             <div className="text-xs font-medium uppercase tracking-wide text-gray-500">Voice Call</div>
             <div className="text-lg font-semibold text-gray-900">Call in Progress</div>
           </div>
         </div>
-        <div className="flex items-center gap-2 rounded-full bg-blue-100 px-3 py-1.5">
+        <div className="flex items-center gap-2 rounded-full bg-brand-100 px-3 py-1.5">
           <motion.div
-            className="h-2 w-2 rounded-full bg-blue-500"
+            className="h-2 w-2 rounded-full bg-brand-500"
             animate={{ scale: [1, 1.3, 1], opacity: [1, 0.7, 1] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           />
-          <span className="text-xs font-semibold text-blue-700">Live</span>
+          <span className="text-xs font-semibold text-brand-700">Live</span>
         </div>
       </div>
 
@@ -200,13 +200,13 @@ function WhatsAppCard() {
             <div className="text-sm font-semibold text-gray-900">+84 912 345 678</div>
           </div>
         </div>
-        <div className="flex items-center gap-2 rounded-full bg-blue-100 px-3 py-1.5">
+        <div className="flex items-center gap-2 rounded-full bg-brand-100 px-3 py-1.5">
           <motion.div
-            className="h-2 w-2 rounded-full bg-blue-500"
+            className="h-2 w-2 rounded-full bg-brand-500"
             animate={{ opacity: [1, 0.4, 1] }}
             transition={{ duration: 0.8, repeat: Infinity }}
           />
-          <span className="text-xs font-semibold text-blue-700">Active</span>
+          <span className="text-xs font-semibold text-brand-700">Active</span>
         </div>
       </div>
 

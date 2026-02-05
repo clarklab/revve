@@ -23,11 +23,11 @@ export function BlogImage({
       scale={1}
       fit="cover"
       colorBack="#00000000"
-      colorFront="#6366f1"
-      colorHighlight="#a5b4fc"
+      colorFront="#c2410c"
+      colorHighlight="#fdba74"
       className={className}
       style={{
-        backgroundColor: '#312e81',
+        backgroundColor: '#7c2d12',
         ...style,
       }}
       aria-label={alt}

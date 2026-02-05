@@ -143,7 +143,7 @@ function LayersIcon() {
 
 export function FeatureGrid() {
   return (
-    <div className="mt-8 rounded-2xl bg-blue-600 px-10 py-12 md:px-16 md:py-16">
+    <div className="mt-8 rounded-2xl bg-brand-600 px-10 py-12 md:px-16 md:py-16">
       <div className="grid grid-cols-2 gap-6 md:grid-cols-3">
       <FeatureItem
         icon={<UsersIcon />}

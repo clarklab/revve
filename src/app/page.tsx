@@ -45,7 +45,7 @@ export default function Page() {
         sideElement={<HeroFlowDiagram />}
         demo={
           <div className="relative">
-            <Screenshot className="rounded-lg" wallpaper="blue" placement="bottom">
+            <Screenshot className="rounded-lg" wallpaper="brand" placement="bottom">
               <Image
                 src="/img/screenshots/preview-inbox.webp"
                 alt="Revve AI inbox preview"
@@ -108,7 +108,7 @@ export default function Page() {
           <>
             <Feature
               demo={
-                <Screenshot wallpaper="blue" placement="bottom-right">
+                <Screenshot wallpaper="brand" placement="bottom-right">
                   <Image
                     src="/img/screenshots/1-left-1000-top-800.webp"
                     alt=""
@@ -182,7 +182,7 @@ export default function Page() {
             />
             <Feature
               demo={
-                <Screenshot wallpaper="blue" placement="bottom-left">
+                <Screenshot wallpaper="brand" placement="bottom-left">
                   <Image
                     src="/img/screenshots/1-right-1000-top-800.webp"
                     alt=""
