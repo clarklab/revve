@@ -71,3 +71,26 @@
     filter: brightness(0) saturate(100%) invert(35%) sepia(90%) saturate(1500%) hue-rotate(345deg) brightness(95%);
   }
 }
+
+/* ReactFlow overrides - replace default blue colors with brand */
+.react-flow__handle {
+  background-color: var(--color-brand-600) !important;
+  border-color: var(--color-brand-600) !important;
+}
+
+.react-flow__edge-path {
+  stroke: var(--color-brand-600) !important;
+}
+
+.react-flow__edge.selected .react-flow__edge-path,
+.react-flow__edge:focus .react-flow__edge-path,
+.react-flow__edge:focus-visible .react-flow__edge-path {
+  stroke: var(--color-brand-500) !important;
+}
+
+.react-flow__node.selected,
+.react-flow__node:focus,
+.react-flow__node:focus-visible {
+  outline-color: var(--color-brand-600) !important;
+  box-shadow: 0 0 0 2px var(--color-brand-600) !important;
+}
