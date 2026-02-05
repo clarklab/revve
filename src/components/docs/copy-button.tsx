@@ -19,7 +19,7 @@ export function CopyButton({ content, label = 'Copy as Plaintext' }: { content: 
         'inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-md px-2.5 py-1.5 text-xs font-medium transition-colors',
         copied
           ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
-          : 'bg-taupe-200/70 text-taupe-600 hover:bg-taupe-200 hover:text-taupe-950 dark:bg-taupe-800 dark:text-taupe-400 dark:hover:bg-taupe-700 dark:hover:text-white'
+          : 'bg-brand-200/70 text-brand-600 hover:bg-brand-200 hover:text-brand-950 dark:bg-brand-800 dark:text-brand-400 dark:hover:bg-brand-700 dark:hover:text-white'
       )}
     >
       {copied ? (

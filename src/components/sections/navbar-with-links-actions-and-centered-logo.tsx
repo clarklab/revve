@@ -18,7 +18,7 @@ export function NavbarLink({
     <Link
       href={href}
       className={clsx(
-        'group inline-flex items-center justify-between gap-2 text-3xl/10 font-medium text-taupe-950 lg:text-sm/7 dark:text-white',
+        'group inline-flex items-center justify-between gap-2 text-3xl/10 font-medium text-brand-900 lg:text-sm/7 dark:text-white',
         className,
       )}
       {...props}
@@ -59,14 +59,14 @@ export function NavbarDropdown({ label, children }: { label: string; children: R
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="group inline-flex items-center gap-1 text-sm/7 font-medium text-taupe-950 dark:text-white"
+        className="group inline-flex items-center gap-1 text-sm/7 font-medium text-brand-900 dark:text-white"
       >
         {label}
         <ChevronDownIcon className={clsx('size-4 transition-transform', isOpen && 'rotate-180')} />
       </button>
 
       {isOpen && (
-        <div className="absolute left-0 top-full z-50 mt-3 min-w-56 rounded-xl bg-white p-2 shadow-lg ring-1 ring-taupe-950/5 dark:bg-taupe-900 dark:ring-white/10">
+        <div className="absolute left-0 top-full z-50 mt-3 min-w-56 rounded-xl bg-white p-2 shadow-lg ring-1 ring-brand-600/5 dark:bg-brand-900 dark:ring-white/10">
           <div className="flex flex-col">{children}</div>
         </div>
       )}
@@ -81,7 +81,7 @@ export function NavbarDropdownMobile({ label, id, children }: { label: string; i
         type="button"
         command="--toggle"
         commandfor={`mobile-menu-${id}`}
-        className="flex w-full items-center justify-between text-3xl/10 font-medium text-taupe-950 dark:text-white"
+        className="flex w-full items-center justify-between text-3xl/10 font-medium text-brand-900 dark:text-white"
       >
         {label}
         <ChevronDownIcon className="size-6 transition-transform in-aria-expanded:rotate-180" />
@@ -103,11 +103,11 @@ export function NavbarDropdownItem({
   description?: string
 }) {
   return (
-    <Link href={href} className="group block rounded-lg px-3 py-2.5 hover:bg-taupe-100 dark:hover:bg-white/5">
-      <div className="font-medium text-taupe-950 group-hover:text-taupe-600 dark:text-white dark:group-hover:text-taupe-300">
+    <Link href={href} className="group block rounded-lg px-3 py-2.5 hover:bg-brand-50 dark:hover:bg-white/5">
+      <div className="font-medium text-brand-900 group-hover:text-brand-600 dark:text-white dark:group-hover:text-brand-300">
         {title}
       </div>
-      {description && <div className="mt-0.5 text-sm text-taupe-500 dark:text-taupe-400">{description}</div>}
+      {description && <div className="mt-0.5 text-sm text-brand-500 dark:text-brand-400">{description}</div>}
     </Link>
   )
 }
@@ -124,10 +124,10 @@ export function NavbarDropdownItemMobile({
   return (
     <Link
       href={href}
-      className="group block rounded-lg py-2 text-lg font-medium text-taupe-700 hover:text-taupe-950 dark:text-taupe-400 dark:hover:text-white"
+      className="group block rounded-lg py-2 text-lg font-medium text-brand-700 hover:text-brand-900 dark:text-brand-400 dark:hover:text-white"
     >
       {title}
-      {description && <span className="ml-2 text-sm text-taupe-500 dark:text-taupe-500">— {description}</span>}
+      {description && <span className="ml-2 text-sm text-brand-500 dark:text-brand-500">— {description}</span>}
     </Link>
   )
 }
@@ -146,7 +146,7 @@ export function NavbarWithLinksActionsAndCenteredLogo({
   actions: ReactNode
 } & ComponentProps<'header'>) {
   return (
-    <header className={clsx('sticky top-0 z-10 bg-taupe-100 dark:bg-taupe-950', className)} {...props}>
+    <header className={clsx('sticky top-0 z-10 bg-brand-50 dark:bg-brand-950', className)} {...props}>
       <style>{`:root { --scroll-padding-top: 5.25rem }`}</style>
       <nav>
         <div className="mx-auto flex h-(--scroll-padding-top) max-w-7xl items-center gap-4 px-6 lg:px-10">
@@ -159,7 +159,7 @@ export function NavbarWithLinksActionsAndCenteredLogo({
               command="show-modal"
               commandfor="mobile-menu"
               aria-label="Toggle menu"
-              className="inline-flex rounded-full p-1.5 text-taupe-950 hover:bg-taupe-950/10 lg:hidden dark:text-white dark:hover:bg-white/10"
+              className="inline-flex rounded-full p-1.5 text-brand-900 hover:bg-brand-950/10 lg:hidden dark:text-white dark:hover:bg-white/10"
             >
               <svg viewBox="0 0 24 24" fill="currentColor" className="size-6">
                 <path
@@ -174,13 +174,13 @@ export function NavbarWithLinksActionsAndCenteredLogo({
 
         <ElDialog className="lg:hidden">
           <dialog id="mobile-menu" className="backdrop:bg-transparent">
-            <ElDialogPanel className="fixed inset-0 bg-taupe-100 px-6 py-6 lg:px-10 dark:bg-taupe-950">
+            <ElDialogPanel className="fixed inset-0 bg-brand-50 px-6 py-6 lg:px-10 dark:bg-brand-950">
               <div className="flex justify-end">
                 <button
                   command="close"
                   commandfor="mobile-menu"
                   aria-label="Toggle menu"
-                  className="inline-flex rounded-full p-1.5 text-taupe-950 hover:bg-taupe-950/10 dark:text-white dark:hover:bg-white/10"
+                  className="inline-flex rounded-full p-1.5 text-brand-900 hover:bg-brand-950/10 dark:text-white dark:hover:bg-white/10"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

@@ -70,15 +70,15 @@ export default function SecurityPage() {
               </p>
               <ul className="mt-6 space-y-3 text-sm text-white/60">
                 <li className="flex items-center gap-3">
-                  <span className="h-1.5 w-1.5 rounded-full bg-taupe-500" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
                   Annual third-party audits
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="h-1.5 w-1.5 rounded-full bg-taupe-500" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
                   Continuous monitoring
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="h-1.5 w-1.5 rounded-full bg-taupe-500" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
                   Documented security policies
                 </li>
               </ul>
@@ -95,15 +95,15 @@ export default function SecurityPage() {
               </p>
               <ul className="mt-6 space-y-3 text-sm text-white/60">
                 <li className="flex items-center gap-3">
-                  <span className="h-1.5 w-1.5 rounded-full bg-taupe-500" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
                   TLS 1.3 in transit
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="h-1.5 w-1.5 rounded-full bg-taupe-500" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
                   AES-256 at rest
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="h-1.5 w-1.5 rounded-full bg-taupe-500" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
                   Key rotation policies
                 </li>
               </ul>

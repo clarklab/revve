@@ -59,7 +59,7 @@ export default function Page() {
         }
         footer={
           <div className="flex flex-col items-center gap-6">
-            <p className="font-mono text-xs font-bold uppercase tracking-wide text-taupe-500 dark:text-taupe-400">Trusted by leading companies</p>
+            <p className="font-mono text-xs font-bold uppercase tracking-wide text-brand-600 dark:text-brand-400">Trusted by leading companies</p>
             <div className="flex flex-wrap items-center justify-center gap-16 sm:gap-20">
               <Image
                 src="/img/logos/LOGO-VIB-Blue.png"

@@ -15,11 +15,11 @@ export function Feature({
 } & ComponentProps<'div'>) {
   return (
     <div className={clsx('flex flex-col gap-2 text-sm/7', className)} {...props}>
-      <div className="flex items-start gap-3 text-taupe-950 dark:text-white">
+      <div className="flex items-start gap-3 text-brand-950 dark:text-white">
         {icon && <div className="flex size-3.25 h-lh items-center">{icon}</div>}
         <h3 className="font-semibold">{headline}</h3>
       </div>
-      <div className="flex flex-col gap-4 text-taupe-700 dark:text-taupe-400">{subheadline}</div>
+      <div className="flex flex-col gap-4 text-brand-700 dark:text-brand-400">{subheadline}</div>
     </div>
   )
 }

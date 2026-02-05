@@ -24,8 +24,8 @@ export function Button({
       className={clsx(
         'inline-flex shrink-0 items-center justify-center gap-1 rounded text-sm/7 font-medium',
         color === 'dark/light' &&
-          'bg-taupe-950 text-white hover:bg-taupe-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100',
-        color === 'light' && 'bg-white text-gray-900 hover:bg-gray-100',
+          'bg-brand-600 text-white hover:bg-brand-700 dark:bg-white dark:text-brand-900 dark:hover:bg-brand-50',
+        color === 'light' && 'bg-white text-brand-900 hover:bg-brand-50',
         sizes[size],
         className,
       )}
@@ -51,8 +51,8 @@ export function ButtonLink({
       className={clsx(
         'inline-flex shrink-0 items-center justify-center gap-1 rounded text-sm/7 font-medium',
         color === 'dark/light' &&
-          'bg-taupe-950 text-white hover:bg-taupe-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100',
-        color === 'light' && 'bg-white text-gray-900 hover:bg-gray-100',
+          'bg-brand-600 text-white hover:bg-brand-700 dark:bg-white dark:text-brand-900 dark:hover:bg-brand-50',
+        color === 'light' && 'bg-white text-brand-900 hover:bg-brand-50',
         sizes[size],
         className,
       )}
@@ -73,7 +73,7 @@ export function SoftButton({
     <button
       type={type}
       className={clsx(
-        'inline-flex shrink-0 items-center justify-center gap-1 rounded bg-taupe-950/10 text-sm/7 font-medium text-taupe-950 hover:bg-taupe-950/15 dark:bg-white/10 dark:text-white dark:hover:bg-white/20',
+        'inline-flex shrink-0 items-center justify-center gap-1 rounded bg-brand-600/10 text-sm/7 font-medium text-brand-700 hover:bg-brand-600/15 dark:bg-white/10 dark:text-white dark:hover:bg-white/20',
         sizes[size],
         className,
       )}
@@ -95,7 +95,7 @@ export function SoftButtonLink({
     <Link
       href={href}
       className={clsx(
-        'inline-flex shrink-0 items-center justify-center gap-1 rounded bg-taupe-950/10 text-sm/7 font-medium text-taupe-950 hover:bg-taupe-950/15 dark:bg-white/10 dark:text-white dark:hover:bg-white/20',
+        'inline-flex shrink-0 items-center justify-center gap-1 rounded bg-brand-600/10 text-sm/7 font-medium text-brand-700 hover:bg-brand-600/15 dark:bg-white/10 dark:text-white dark:hover:bg-white/20',
         sizes[size],
         className,
       )}
@@ -119,7 +119,7 @@ export function PlainButton({
       type={type}
       className={clsx(
         'inline-flex shrink-0 items-center justify-center gap-2 rounded text-sm/7 font-medium',
-        color === 'dark/light' && 'text-taupe-950 hover:bg-taupe-950/10 dark:text-white dark:hover:bg-white/10',
+        color === 'dark/light' && 'text-brand-700 hover:bg-brand-600/10 dark:text-white dark:hover:bg-white/10',
         color === 'light' && 'text-white hover:bg-white/15 dark:hover:bg-white/10',
         sizes[size],
         className,
@@ -145,7 +145,7 @@ export function PlainButtonLink({
       href={href}
       className={clsx(
         'inline-flex shrink-0 items-center justify-center gap-2 rounded text-sm/7 font-medium',
-        color === 'dark/light' && 'text-taupe-950 hover:bg-taupe-950/10 dark:text-white dark:hover:bg-white/10',
+        color === 'dark/light' && 'text-brand-700 hover:bg-brand-600/10 dark:text-white dark:hover:bg-white/10',
         color === 'light' && 'text-white hover:bg-white/15 dark:hover:bg-white/10',
         sizes[size],
         className,

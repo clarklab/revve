@@ -18,14 +18,14 @@ export function TestimonialTwoColumnWithLargePhoto({
   return (
     <section className={clsx('py-16', className)} {...props}>
       <Container>
-        <figure className="grid grid-cols-1 gap-x-2 rounded-xl bg-taupe-950/2.5 p-2 lg:grid-cols-2 dark:bg-white/5">
-          <div className="flex flex-col items-start justify-between gap-10 p-6 text-taupe-950 sm:p-10 dark:text-white">
+        <figure className="grid grid-cols-1 gap-x-2 rounded-xl bg-brand-600/5 p-2 lg:grid-cols-2 dark:bg-white/5">
+          <div className="flex flex-col items-start justify-between gap-10 p-6 text-brand-950 sm:p-10 dark:text-white">
             <blockquote className="relative flex flex-col gap-4 text-2xl/9 text-pretty *:first:before:absolute *:first:before:inline *:first:before:-translate-x-full *:first:before:content-['“'] *:last:after:inline *:last:after:content-['”']">
               {quote}
             </blockquote>
             <figcaption className="text-sm/7">
               <p className="font-semibold">{name}</p>
-              <p className="text-taupe-700 dark:text-taupe-400">{byline}</p>
+              <p className="text-brand-700 dark:text-brand-400">{byline}</p>
             </figcaption>
           </div>
           <div className="flex overflow-hidden rounded-sm outline -outline-offset-1 outline-black/5 *:object-cover dark:outline-white/5">

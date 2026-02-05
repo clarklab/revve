@@ -8,7 +8,7 @@ export function Eyebrow({ children, className, ...props }: ComponentProps<'div'>
   const text = typeof children === 'string' ? children : null
 
   return (
-    <div className={clsx('font-mono text-xs font-bold uppercase tracking-wide text-taupe-700 dark:text-taupe-400', className)} {...props}>
+    <div className={clsx('font-mono text-xs font-bold uppercase tracking-wide text-brand-600 dark:text-brand-400', className)} {...props}>
       {text ? (
         <TypewriterOnce text={text} typingSpeed={35} />
       ) : (

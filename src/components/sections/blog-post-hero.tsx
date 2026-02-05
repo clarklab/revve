@@ -26,7 +26,7 @@ export function BlogPostHero({
           <div className="flex flex-col gap-6">
             <Eyebrow>{category}</Eyebrow>
             <Heading className="text-4xl/10 sm:text-5xl/12">{title}</Heading>
-            <div className="flex items-center gap-2 text-sm/7 text-taupe-600 dark:text-taupe-400">
+            <div className="flex items-center gap-2 text-sm/7 text-brand-600 dark:text-brand-400">
               <span>{author}</span>
               <span aria-hidden="true">·</span>
               <span>{readingTime} min read</span>

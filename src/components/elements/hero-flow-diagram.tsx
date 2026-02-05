@@ -94,7 +94,7 @@ function VisitorDetectedNode({ data }: NodeProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: data.visible ? 1 : 0 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="w-40 rounded-lg border-2 border-brand-600 bg-taupe-100 p-2.5 dark:border-brand-400 dark:bg-taupe-950"
+      className="w-40 rounded-lg border-2 border-brand-600 bg-brand-100 p-2.5 dark:border-brand-400 dark:bg-brand-950"
     >
       <Handle type="source" position={Position.Right} className="!h-0 !w-0 !border-0 !bg-transparent" />
 
@@ -135,7 +135,7 @@ function AgentInitializingNode({ data }: NodeProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: data.visible ? 1 : 0 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="w-48 rounded-lg border-2 border-brand-600 bg-taupe-100 p-2.5 dark:border-brand-400 dark:bg-taupe-950"
+      className="w-48 rounded-lg border-2 border-brand-600 bg-brand-100 p-2.5 dark:border-brand-400 dark:bg-brand-950"
     >
       <Handle type="target" position={Position.Left} className="!h-0 !w-0 !border-0 !bg-transparent" />
       <Handle type="source" position={Position.Right} className="!h-0 !w-0 !border-0 !bg-transparent" />
@@ -174,7 +174,7 @@ function VoiceChatNode({ data }: NodeProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: data.visible ? 1 : 0 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="w-56 rounded-lg border-2 border-brand-600 bg-taupe-100 p-2.5 dark:border-brand-400 dark:bg-taupe-950"
+      className="w-56 rounded-lg border-2 border-brand-600 bg-brand-100 p-2.5 dark:border-brand-400 dark:bg-brand-950"
     >
       <Handle type="target" position={Position.Right} className="!h-0 !w-0 !border-0 !bg-transparent" />
 
@@ -192,7 +192,7 @@ function VoiceChatNode({ data }: NodeProps) {
       </div>
 
       {/* CTA Button */}
-      <button className="pointer-events-auto w-full whitespace-nowrap rounded bg-taupe-950 px-3 py-1 text-sm/7 font-medium text-white transition-colors hover:bg-taupe-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100">
+      <button className="pointer-events-auto w-full whitespace-nowrap rounded bg-brand-950 px-3 py-1 text-sm/7 font-medium text-white transition-colors hover:bg-brand-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100">
         Chat with Revve Agent
       </button>
     </motion.div>
