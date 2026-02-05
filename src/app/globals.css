@@ -18,6 +18,19 @@
   --color-taupe-800: oklch(40% 0.24 265);
   --color-taupe-900: oklch(35% 0.22 265);
   --color-taupe-950: oklch(45% 0.26 265);
+
+  /* Brand color - Rich burnt orange/red */
+  --color-brand-50: oklch(97% 0.02 30);
+  --color-brand-100: oklch(93% 0.06 30);
+  --color-brand-200: oklch(86% 0.12 30);
+  --color-brand-300: oklch(76% 0.16 30);
+  --color-brand-400: oklch(65% 0.18 30);
+  --color-brand-500: oklch(55% 0.20 30);
+  --color-brand-600: oklch(52% 0.22 30);
+  --color-brand-700: oklch(45% 0.19 30);
+  --color-brand-800: oklch(38% 0.15 30);
+  --color-brand-900: oklch(32% 0.12 30);
+  --color-brand-950: oklch(25% 0.08 30);
 }
 
 @layer base {
@@ -44,6 +57,6 @@
 
 @layer utilities {
   .logo-monotone {
-    filter: brightness(0) saturate(100%) invert(24%) sepia(90%) saturate(2000%) hue-rotate(220deg) brightness(100%);
+    filter: brightness(0) saturate(100%) invert(35%) sepia(90%) saturate(1500%) hue-rotate(345deg) brightness(95%);
   }
 }

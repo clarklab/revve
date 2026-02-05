@@ -17,11 +17,11 @@ import { Typewriter } from './typewriter'
 // Set to true to enable dragging and position saving
 const DEV_MODE = false
 
-// Pulsing blue indicator
+// Pulsing brand indicator
 function PulsingDot() {
   return (
     <motion.div
-      className="h-2 w-2 rounded-full bg-blue-600"
+      className="h-2 w-2 rounded-full bg-brand-600"
       animate={{
         scale: [1, 1.3, 1],
         opacity: [1, 0.7, 1],
@@ -42,7 +42,7 @@ function LoadingDots() {
       {[...Array(3)].map((_, i) => (
         <motion.div
           key={i}
-          className="h-1.5 w-1.5 rounded-full bg-blue-500"
+          className="h-1.5 w-1.5 rounded-full bg-brand-500"
           animate={{
             y: [0, -2, 0],
             opacity: [0.4, 1, 0.4],
@@ -94,14 +94,14 @@ function VisitorDetectedNode({ data }: NodeProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: data.visible ? 1 : 0 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="w-40 rounded-lg border-2 border-blue-600 bg-taupe-100 p-2.5 dark:border-blue-400 dark:bg-taupe-950"
+      className="w-40 rounded-lg border-2 border-brand-600 bg-taupe-100 p-2.5 dark:border-brand-400 dark:bg-taupe-950"
     >
       <Handle type="source" position={Position.Right} className="!h-0 !w-0 !border-0 !bg-transparent" />
 
       {/* Header */}
       <div className="mb-2 flex items-center gap-2">
-        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-blue-100 dark:bg-blue-900/50">
-          <GlobeIcon className="h-3.5 w-3.5 text-blue-600 dark:text-blue-400" />
+        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-brand-100 dark:bg-brand-900/50">
+          <GlobeIcon className="h-3.5 w-3.5 text-brand-600 dark:text-brand-400" />
         </div>
         <div className="flex items-center gap-1.5">
           <span className="whitespace-nowrap text-xs font-semibold text-gray-900 dark:text-white">Visit detected!</span>
@@ -135,32 +135,32 @@ function AgentInitializingNode({ data }: NodeProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: data.visible ? 1 : 0 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="w-48 rounded-lg border-2 border-blue-600 bg-taupe-100 p-2.5 dark:border-blue-400 dark:bg-taupe-950"
+      className="w-48 rounded-lg border-2 border-brand-600 bg-taupe-100 p-2.5 dark:border-brand-400 dark:bg-taupe-950"
     >
       <Handle type="target" position={Position.Left} className="!h-0 !w-0 !border-0 !bg-transparent" />
       <Handle type="source" position={Position.Right} className="!h-0 !w-0 !border-0 !bg-transparent" />
 
       {/* Header */}
       <div className="mb-2 flex items-center gap-2">
-        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-blue-100 dark:bg-blue-900/50">
+        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-brand-100 dark:bg-brand-900/50">
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
           >
-            <SparkleIcon className="h-3.5 w-3.5 text-blue-600 dark:text-blue-400" />
+            <SparkleIcon className="h-3.5 w-3.5 text-brand-600 dark:text-brand-400" />
           </motion.div>
         </div>
         <span className="whitespace-nowrap text-xs font-semibold text-gray-900 dark:text-white">Launching local agent</span>
       </div>
 
       {/* Status */}
-      <div className="flex items-center gap-1.5 rounded-md bg-blue-50 px-2 py-1.5 dark:bg-blue-900/30">
+      <div className="flex items-center gap-1.5 rounded-md bg-brand-50 px-2 py-1.5 dark:bg-brand-900/30">
         <Typewriter
           words={['Preparing...', 'Context...', 'Timing...']}
           typingSpeed={40}
           deletingSpeed={25}
           pauseBeforeDelete={800}
-          className="text-[10px] font-medium text-blue-600 dark:text-blue-400"
+          className="text-[10px] font-medium text-brand-600 dark:text-brand-400"
         />
       </div>
     </motion.div>
@@ -174,18 +174,18 @@ function VoiceChatNode({ data }: NodeProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: data.visible ? 1 : 0 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="w-56 rounded-lg border-2 border-blue-600 bg-taupe-100 p-2.5 dark:border-blue-400 dark:bg-taupe-950"
+      className="w-56 rounded-lg border-2 border-brand-600 bg-taupe-100 p-2.5 dark:border-brand-400 dark:bg-taupe-950"
     >
       <Handle type="target" position={Position.Right} className="!h-0 !w-0 !border-0 !bg-transparent" />
 
       {/* Header */}
       <div className="mb-2 flex items-center gap-2">
-        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-blue-100 dark:bg-blue-900/50">
+        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-brand-100 dark:bg-brand-900/50">
           <motion.div
             animate={{ rotate: [0, -10, 10, -10, 10, 0] }}
             transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 1 }}
           >
-            <PhoneIcon className="h-3.5 w-3.5 text-blue-600 dark:text-blue-400" />
+            <PhoneIcon className="h-3.5 w-3.5 text-brand-600 dark:text-brand-400" />
           </motion.div>
         </div>
         <span className="whitespace-nowrap text-xs font-semibold text-gray-900 dark:text-white">Agent is calling (yes, really!)</span>
@@ -236,7 +236,7 @@ const initialEdges: Edge[] = [
     target: 'agent',
     type: 'smoothstep',
     animated: true,
-    style: { stroke: '#2563eb', strokeWidth: 2, opacity: 0, transition: 'opacity 0.4s ease-out' },
+    style: { stroke: '#c2410c', strokeWidth: 2, opacity: 0, transition: 'opacity 0.4s ease-out' },
   },
   {
     id: 'agent-voiceChat',
@@ -244,7 +244,7 @@ const initialEdges: Edge[] = [
     target: 'voiceChat',
     type: 'smoothstep',
     animated: true,
-    style: { stroke: '#2563eb', strokeWidth: 2, opacity: 0, transition: 'opacity 0.4s ease-out' },
+    style: { stroke: '#c2410c', strokeWidth: 2, opacity: 0, transition: 'opacity 0.4s ease-out' },
   },
 ]
 
@@ -375,7 +375,7 @@ export function HeroFlowDiagram() {
       {DEV_MODE && (
         <button
           onClick={savePositions}
-          className="pointer-events-auto fixed bottom-8 right-8 z-[9999] rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-lg transition-colors hover:bg-blue-700"
+          className="pointer-events-auto fixed bottom-8 right-8 z-[9999] rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-lg transition-colors hover:bg-brand-700"
         >
           {saved ? '✓ Copied to clipboard!' : 'Save Positions'}
         </button>
