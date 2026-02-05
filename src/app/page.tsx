@@ -4,17 +4,16 @@ import { AnnouncementBadge } from '@/components/elements/announcement-badge'
 import { ButtonLink, PlainButtonLink, SoftButtonLink } from '@/components/elements/button'
 import { HeroFloatingCards } from '@/components/elements/hero-floating-cards'
 import { HeroFlowDiagram } from '@/components/elements/hero-flow-diagram'
-import { Link } from '@/components/elements/link'
 import { Logo, LogoGrid } from '@/components/elements/logo-grid'
 import { Screenshot } from '@/components/elements/screenshot'
 import { ArrowNarrowRightIcon } from '@/components/icons/arrow-narrow-right-icon'
 import { ChevronIcon } from '@/components/icons/chevron-icon'
-import { CallToActionSimple } from '@/components/sections/call-to-action-simple'
+import { Container } from '@/components/elements/container'
 import { FAQsTwoColumnAccordion, Faq } from '@/components/sections/faqs-two-column-accordion'
-import { Feature, FeaturesTwoColumnWithDemos } from '@/components/sections/features-two-column-with-demos'
+import { FeaturesBentoGrid } from '@/components/sections/features-bento-grid'
 import { HeroLeftAlignedWithDemo } from '@/components/sections/hero-left-aligned-with-demo'
 import { Plan, PricingMultiTier } from '@/components/sections/pricing-multi-tier'
-import { Stat, StatsWithGraph } from '@/components/sections/stats-with-graph'
+import { FeatureTwoColumnWithScreenshot } from '@/components/sections/feature-two-column-with-screenshot'
 import { Testimonial, TestimonialThreeColumnGrid } from '@/components/sections/testimonials-three-column-grid'
 import { FeatureGrid } from '@/components/sections/feature-grid'
 
@@ -25,7 +24,7 @@ export default function Page() {
       <HeroLeftAlignedWithDemo
         id="hero"
         eyebrow={<AnnouncementBadge href="/blog/native-voice-announcement" text={<><strong>New</strong>: Revve Native Voice is live</>} cta="Read more" />}
-        headline="Customer support that feels like a conversation."
+        headline={<>AI-powered customer<br className="hidden lg:block" /> ops for BFSI.</>}
         subheadline={
           <p>
             Resolve routine issues automatically, escalate complex cases with full context, and keep your systems in sync across your customer channels.
@@ -33,7 +32,7 @@ export default function Page() {
         }
         cta={
           <div className="flex items-center gap-4">
-            <ButtonLink href="#" size="lg">
+            <ButtonLink href="/request-demo" size="lg">
               Book a Demo
             </ButtonLink>
 
@@ -45,229 +44,64 @@ export default function Page() {
         sideElement={<HeroFlowDiagram />}
         demo={
           <div className="relative">
-            <Screenshot className="rounded-lg" wallpaper="brand" placement="bottom">
-              <Image
-                src="/img/screenshots/preview-inbox.webp"
-                alt="Revve AI inbox preview"
-                className="bg-white/75 dark:bg-black/75"
-                width={3440}
-                height={1990}
-              />
-            </Screenshot>
-            <HeroFloatingCards />
-          </div>
-        }
-        footer={
-          <div className="flex flex-col items-center gap-6">
-            <p className="font-mono text-xs font-bold uppercase tracking-wide text-brand-600 dark:text-brand-400">Trusted by leading companies</p>
-            <div className="flex flex-wrap items-center justify-center gap-16 sm:gap-20">
-              <Image
-                src="/img/logos/LOGO-VIB-Blue.png"
-                alt="VIB"
-                width={160}
-                height={64}
-                className="logo-monotone h-8 w-auto object-contain"
-              />
-              <Image
-                src="/img/logos/LOGO-hong-leong.png"
-                alt="Hong Leong"
-                width={200}
-                height={64}
-                className="logo-monotone h-8 w-auto object-contain"
-              />
-              <Image
-                src="/img/logos/LOGO-Rollick.png"
-                alt="Rollick"
-                width={180}
-                height={64}
-                className="logo-monotone h-6 w-auto object-contain"
-              />
-              <Image
-                src="/img/logos/LOGO-Eagleview.png"
-                alt="EagleView"
-                width={220}
-                height={64}
-                className="logo-monotone h-10 w-auto object-contain"
-              />
+            <div className="relative overflow-hidden rounded-t-lg">
+              <Screenshot className="!rounded-none" wallpaper="brand" placement="bottom">
+                <Image
+                  src="/img/screenshots/preview-inbox.webp"
+                  alt="Revve AI inbox preview"
+                  className="bg-white/75 dark:bg-black/75"
+                  width={3440}
+                  height={1990}
+                />
+              </Screenshot>
+              <HeroFloatingCards />
             </div>
-            <FeatureGrid />
+            <div className="flex flex-col items-center gap-6 rounded-b-lg bg-brand-600/10 px-8 py-12 dark:bg-white/5">
+              <p className="text-xs font-bold uppercase tracking-wide text-brand-600 dark:text-brand-400">Trusted by leading companies</p>
+              <div className="flex flex-wrap items-center justify-center gap-16 sm:gap-20">
+                <Image
+                  src="/img/logos/LOGO-VIB-Blue.png"
+                  alt="VIB"
+                  width={160}
+                  height={64}
+                  className="logo-monotone h-8 w-auto object-contain"
+                />
+                <Image
+                  src="/img/logos/LOGO-hong-leong.png"
+                  alt="Hong Leong"
+                  width={200}
+                  height={64}
+                  className="logo-monotone h-8 w-auto object-contain"
+                />
+                <Image
+                  src="/img/logos/LOGO-Rollick.png"
+                  alt="Rollick"
+                  width={180}
+                  height={64}
+                  className="logo-monotone h-6 w-auto object-contain"
+                />
+                <Image
+                  src="/img/logos/LOGO-Eagleview.png"
+                  alt="EagleView"
+                  width={220}
+                  height={64}
+                  className="logo-monotone h-10 w-auto object-contain"
+                />
+              </div>
+            </div>
           </div>
         }
       />
       {/* Features */}
-      <FeaturesTwoColumnWithDemos
-        id="features"
-        eyebrow="Revve does it all"
-        headline="Automate customer operations across all channels from one platform"
-        subheadline={
-          <p>
-            From first contact to resolution, Revve orchestrates your customer workflows so you can scale operations without increasing headcount.
-          </p>
-        }
-        features={
-          <>
-            <Feature
-              demo={
-                <Screenshot wallpaper="brand" placement="bottom-right">
-                  <Image
-                    src="/img/screenshots/1-left-1000-top-800.webp"
-                    alt=""
-                    className="bg-white/75 sm:hidden dark:hidden"
-                    width={1000}
-                    height={800}
-                  />
-                  <Image
-                    src="/img/screenshots/1-color-taupe-left-1000-top-800.webp"
-                    alt=""
-                    className="bg-black/75 not-dark:hidden sm:hidden"
-                    width={1000}
-                    height={800}
-                  />
-                  <Image
-                    src="/img/screenshots/1-left-1800-top-660.webp"
-                    alt=""
-                    className="bg-white/75 max-sm:hidden lg:hidden dark:hidden"
-                    width={1800}
-                    height={660}
-                  />
-                  <Image
-                    src="/img/screenshots/1-color-taupe-left-1800-top-660.webp"
-                    alt=""
-                    className="bg-black/75 not-dark:hidden max-sm:hidden lg:hidden"
-                    width={1800}
-                    height={660}
-                  />
-                  <Image
-                    src="/img/screenshots/1-left-1300-top-1300.webp"
-                    alt=""
-                    className="bg-white/75 max-lg:hidden xl:hidden dark:hidden"
-                    width={1300}
-                    height={1300}
-                  />
-                  <Image
-                    src="/img/screenshots/1-color-taupe-left-1300-top-1300.webp"
-                    alt=""
-                    className="bg-black/75 not-dark:hidden max-lg:hidden xl:hidden"
-                    width={1300}
-                    height={1300}
-                  />
-                  <Image
-                    src="/img/screenshots/1-left-1800-top-1250.webp"
-                    alt=""
-                    className="bg-white/75 max-xl:hidden dark:hidden"
-                    width={1800}
-                    height={1250}
-                  />
-                  <Image
-                    src="/img/screenshots/1-color-taupe-left-1800-top-1250.webp"
-                    alt=""
-                    className="bg-black/75 not-dark:hidden max-xl:hidden"
-                    width={1800}
-                    height={1250}
-                  />
-                </Screenshot>
-              }
-              headline="Shared Inbox"
-              subheadline={
-                <p>
-                  Keep every customer conversation in one clean, collaborative inbox. A single source of truth is much
-                  easier to ignore.
-                </p>
-              }
-              cta={
-                <Link href="#">
-                  See how it works <ArrowNarrowRightIcon />
-                </Link>
-              }
-            />
-            <Feature
-              demo={
-                <Screenshot wallpaper="brand" placement="bottom-left">
-                  <Image
-                    src="/img/screenshots/1-right-1000-top-800.webp"
-                    alt=""
-                    className="bg-white/75 sm:hidden dark:hidden"
-                    width={1000}
-                    height={800}
-                  />
-                  <Image
-                    src="/img/screenshots/1-color-taupe-right-1000-top-800.webp"
-                    alt=""
-                    className="bg-black/75 not-dark:hidden sm:hidden"
-                    width={1000}
-                    height={800}
-                  />
-                  <Image
-                    src="/img/screenshots/1-right-1800-top-660.webp"
-                    alt=""
-                    className="bg-white/75 max-sm:hidden lg:hidden dark:hidden"
-                    width={1800}
-                    height={660}
-                  />
-                  <Image
-                    src="/img/screenshots/1-color-taupe-right-1800-top-660.webp"
-                    alt=""
-                    className="bg-black/75 not-dark:hidden max-sm:hidden lg:hidden"
-                    width={1800}
-                    height={660}
-                  />
-                  <Image
-                    src="/img/screenshots/1-right-1300-top-1300.webp"
-                    alt=""
-                    className="bg-white/75 max-lg:hidden xl:hidden dark:hidden"
-                    width={1300}
-                    height={1300}
-                  />
-                  <Image
-                    src="/img/screenshots/1-color-taupe-right-1300-top-1300.webp"
-                    alt=""
-                    className="bg-black/75 not-dark:hidden max-lg:hidden xl:hidden"
-                    width={1300}
-                    height={1300}
-                  />
-                  <Image
-                    src="/img/screenshots/1-right-1800-top-1250.webp"
-                    alt=""
-                    className="bg-white/75 max-xl:hidden dark:hidden"
-                    width={1800}
-                    height={1250}
-                  />
-                  <Image
-                    src="/img/screenshots/1-color-taupe-right-1800-top-1250.webp"
-                    alt=""
-                    className="bg-black/75 not-dark:hidden max-xl:hidden"
-                    width={1800}
-                    height={1250}
-                  />
-                </Screenshot>
-              }
-              headline="Inbox Agent"
-              subheadline={
-                <p>Get valuable context without having to read through your customer's long, angry email thread.</p>
-              }
-              cta={
-                <Link href="#">
-                  See how it works <ArrowNarrowRightIcon />
-                </Link>
-              }
-            />
-          </>
-        }
-      />
-      {/* Stats */}
-      <StatsWithGraph
-        id="stats"
-        eyebrow="Built for scale"
-        headline="Everything needed to scale operations"
-        subheadline={
-          <p>
-            Deploy AI agents that scale operations and delight customers, all with no code. We don't mean <em>low code</em>, we mean <strong>literally no code. Not one line</strong>.
-          </p>
-        }
-      >
-        <Stat stat="2x" text="Resolved cases with complex case hand off with full history." />
-        <Stat stat="20k" text="Applications recovered per month" />
-      </StatsWithGraph>
+      <FeaturesBentoGrid id="features" />
+      {/* Built For Scale */}
+      <FeatureTwoColumnWithScreenshot id="built-for-scale" />
+      {/* Feature Grid */}
+      <section className="py-16">
+        <Container>
+          <FeatureGrid />
+        </Container>
+      </section>
       {/* Testimonial */}
       <TestimonialThreeColumnGrid
         id="testimonial"
@@ -277,121 +111,38 @@ export default function Page() {
         <Testimonial
           quote={
             <p>
-              Revve AI's ability to provide a more natural, human-like response was a critical factor for us. It moves beyond the robotic interactions our customers dislike and allows for a more effective and positive re-engagement.
+              We love how the AI agents sounds both in chat and in phone call. We look forward to expanding Revve to other aspects of Dropoff business
             </p>
           }
-          img={
-            <Image
-              src="/img/avatars/10-size-160.webp"
-              alt=""
-              className="not-dark:bg-white/75 dark:bg-black/75"
-              width={160}
-              height={160}
-            />
-          }
-          name="VIB Contact Center Manager"
-          byline="Contact Center Manager at VIB"
+          img={<Image src="/img/photos/photo-sean-spector.webp" alt="" className="not-dark:bg-white/75 dark:bg-black/75" width={160} height={160} />}
+          name="Sean Spector"
+          byline="CEO"
         />
         <Testimonial
           quote={
             <p>
-              We use Oatmeal's automation features to make cancellation requests disappear into a black hole, improving
-              our retention rates by over 300%.
+              Revve&apos;s dramatically improving our time-to-first-touch for leads and letting sales focus on closing, not chasing.
             </p>
           }
-          img={
-            <Image
-              src="/img/avatars/15-size-160.webp"
-              alt=""
-              className="not-dark:bg-white/75 dark:bg-black/75"
-              width={160}
-              height={160}
-            />
-          }
-          name="Lynn Marshall"
-          byline="Founder at Pine Labs"
+          img={<Image src="/img/photos/photo-mary-comer.webp" alt="" className="not-dark:bg-white/75 dark:bg-black/75" width={160} height={160} />}
+          name="Marcy Comer"
+          byline="CMO"
         />
         <Testimonial
           quote={
             <p>
-              I've been using the spare time that Oatmeal has freed up to work not just one, but two other jobs, all
-              while hitting my core KPIs. My bosses have no idea.
+              Revve AI agents not only wow our customers when they get instant response but can also close deals
             </p>
           }
-          img={
-            <Image
-              src="/img/avatars/13-size-160.webp"
-              alt=""
-              className="not-dark:bg-white/75 dark:bg-black/75"
-              width={160}
-              height={160}
-            />
-          }
-          name="Rajat Singh"
-          byline="Head of Support at Concise"
-        />
-        <Testimonial
-          quote={
-            <p>
-              Oatmeal has given us key insights into how much our customers absolutely hate using our product and how we
-              can improve it to stop them from leaving us.
-            </p>
-          }
-          img={
-            <Image
-              src="/img/avatars/12-size-160.webp"
-              alt=""
-              className="not-dark:bg-white/75 dark:bg-black/75"
-              width={160}
-              height={160}
-            />
-          }
-          name="John Walters"
-          byline="CPO at Orbital"
-        />
-        <Testimonial
-          quote={
-            <p>
-              As a solo founder, Oatmeal has been a lifesaver. It makes it look like Looply is an actual company with
-              multiple employees, when in reality it's just me and an AI.
-            </p>
-          }
-          img={
-            <Image
-              src="/img/avatars/11-size-160.webp"
-              alt=""
-              className="not-dark:bg-white/75 dark:bg-black/75"
-              width={160}
-              height={160}
-            />
-          }
-          name="Noah Gold"
-          byline="CEO at Looply"
-        />
-        <Testimonial
-          quote={
-            <p>
-              Thanks to Oatmeal, we've managed to cut our support costs in half by laying off dozens of employees, while
-              still improving response times and customer satisfaction.
-            </p>
-          }
-          img={
-            <Image
-              src="/img/avatars/14-size-160.webp"
-              alt=""
-              className="not-dark:bg-white/75 dark:bg-black/75"
-              width={160}
-              height={160}
-            />
-          }
-          name="Mark Levinson"
-          byline="COO at Quirk"
+          img={<Image src="/img/photos/photo-linh-tahi.webp" alt="" className="not-dark:bg-white/75 dark:bg-black/75" width={160} height={160} />}
+          name="Linh Thai"
+          byline="CEO"
         />
       </TestimonialThreeColumnGrid>
       {/* FAQs */}
       <FAQsTwoColumnAccordion
         id="faqs"
-        headline="Questions & Answers"
+        headline="Common Questions"
         subheadline={
           <>
             <p>Find detailed answers and implementation guides in our documentation.</p>
@@ -442,7 +193,7 @@ export default function Page() {
           answer="Full omnichannel. Revve orchestrates voice calls, Zalo (personal and OA), WhatsApp, SMS, Facebook Messenger, web chat, and mobile app chat in unified workflows. For example, if a voice call fails, Revve can automatically send a Zalo message. When escalating to humans, agents see the conversation history across all channels."
         />
       </FAQsTwoColumnAccordion>
-      {/* Pricing */}
+      {/* Pricing – hidden for now, keeping in codebase
       <PricingMultiTier
         id="pricing"
         headline="Pricing to fit your business needs."
@@ -510,28 +261,45 @@ export default function Page() {
           </>
         }
       />
+      */}
       {/* Call To Action */}
-      <CallToActionSimple
-        id="call-to-action"
-        headline="Ready to make customer support feel simple again?"
-        subheadline={
-          <p>
-            Join hundreds of teams using Oatmeal to deliver faster, friendlier email support — using a massive network
-            of low wage workers stationed around the globe
-          </p>
-        }
-        cta={
-          <div className="flex items-center gap-4">
-            <ButtonLink href="#" size="lg">
-              Start free trial
-            </ButtonLink>
-
-            <PlainButtonLink href="#" size="lg">
-              Book a demo <ChevronIcon />
-            </PlainButtonLink>
+      <section id="call-to-action" className="py-16">
+        <Container>
+          <div className="rounded-4xl bg-brand-600 px-8 py-14 sm:px-14 sm:py-20">
+            <h2 className="font-display text-3xl/9 font-medium tracking-[-0.03em] text-pretty text-white sm:text-[2.5rem]/10">
+              Ready to scale your customer operations?
+            </h2>
+            <div className="mt-8">
+              <figure className="flex flex-col items-start gap-1">
+                <div className="relative drop-shadow-sm">
+                  <div className="rounded-2xl bg-white/25 px-6 py-5">
+                    <blockquote className="text-pretty text-white/80">
+                      &ldquo;Revve AI&apos;s ability to provide a more natural, human-like response was a critical factor for us. It moves beyond the robotic interactions our customers dislike and allows for a more effective and positive re-engagement.&rdquo;
+                    </blockquote>
+                  </div>
+                  <svg className="ml-8 h-3 w-5 text-white/25" viewBox="0 0 20 12" fill="currentColor" preserveAspectRatio="none">
+                    <path d="M0 0L10 12L20 0Z" />
+                  </svg>
+                </div>
+                <figcaption className="mt-3 flex items-end gap-3 pl-6">
+                  <Image src="/img/logos/LOGO-VIB-Blue.png" alt="VIB" width={160} height={64} className="h-6 w-auto brightness-0 invert" />
+                  <span className="text-sm leading-none text-white/60">VIB Contact Center Manager</span>
+                </figcaption>
+              </figure>
+            </div>
+            <div className="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center">
+              <ButtonLink href="/request-demo" color="light" className="px-8 py-4 text-xl">
+                Book a Demo
+              </ButtonLink>
+              <ul className="flex flex-col gap-2 text-sm text-white/70 sm:flex-row sm:gap-4">
+                <li className="flex items-center gap-1.5"><svg className="size-4 text-white" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clipRule="evenodd" /></svg>30-min personalized demo</li>
+                <li className="flex items-center gap-1.5"><svg className="size-4 text-white" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clipRule="evenodd" /></svg>Custom ROI analysis</li>
+                <li className="flex items-center gap-1.5"><svg className="size-4 text-white" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clipRule="evenodd" /></svg>No commitment</li>
+              </ul>
+            </div>
           </div>
-        }
-      />
+        </Container>
+      </section>
     </>
   )
 }

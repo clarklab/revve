@@ -31,7 +31,7 @@ function LockIcon({ className }: { className?: string }) {
 export default function SecurityPage() {
   return (
     <DarkModePage>
-      <div className="min-h-screen bg-[#151528]">
+      <div className="min-h-screen bg-brand-700">
       {/* Hero */}
       <section className="py-24 sm:py-32">
         <Container>

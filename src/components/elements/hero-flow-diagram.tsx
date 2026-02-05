@@ -192,7 +192,8 @@ function VoiceChatNode({ data }: NodeProps) {
       </div>
 
       {/* CTA Button */}
-      <button className="pointer-events-auto w-full whitespace-nowrap rounded bg-brand-950 px-3 py-1 text-sm/7 font-medium text-white transition-colors hover:bg-brand-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100">
+      <button className="pointer-events-auto flex w-full items-center justify-center gap-1.5 whitespace-nowrap rounded bg-brand-950 px-3 py-1 text-sm/7 font-medium text-white transition-colors hover:bg-brand-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100">
+        <svg className="h-3.5 w-3.5" viewBox="0 0 153 204" fill="none"><path d="M99.9 82.8L43.2 26.1L69.3 0L152.1 82.8L69.3 165.6L43.2 139.5L99.9 82.8Z" fill="currentColor"/><path d="M108.9 203.4L78.3 172.8L108.9 142.2L139.5 172.8L108.9 203.4Z" fill="currentColor"/><path d="M34.2 131.4V203.4H0V113.4L57.6 57.6L82.8 82.8L34.2 131.4Z" fill="currentColor"/></svg>
         Chat with Revve Agent
       </button>
     </motion.div>
@@ -236,7 +237,7 @@ const initialEdges: Edge[] = [
     target: 'agent',
     type: 'smoothstep',
     animated: true,
-    style: { stroke: '#c2410c', strokeWidth: 2, opacity: 0, transition: 'opacity 0.4s ease-out' },
+    style: { stroke: '#FF5300', strokeWidth: 2, opacity: 0, transition: 'opacity 0.4s ease-out' },
   },
   {
     id: 'agent-voiceChat',
@@ -244,7 +245,7 @@ const initialEdges: Edge[] = [
     target: 'voiceChat',
     type: 'smoothstep',
     animated: true,
-    style: { stroke: '#c2410c', strokeWidth: 2, opacity: 0, transition: 'opacity 0.4s ease-out' },
+    style: { stroke: '#FF5300', strokeWidth: 2, opacity: 0, transition: 'opacity 0.4s ease-out' },
   },
 ]
 

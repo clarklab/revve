@@ -5,33 +5,33 @@
 @theme {
   --font-display: 'Instrument Sans', sans-serif;
   --font-sans: 'Inter', system-ui, sans-serif;
-  --font-mono: 'Monaspace Krypton', ui-monospace, monospace;
+  --font-mono: ui-monospace, monospace;
 
-  /* Warm neutral - matching burnt orange brand hue */
-  --color-taupe-50: oklch(97% 0.02 30);
-  --color-taupe-100: oklch(94% 0.04 30);
-  --color-taupe-200: oklch(88% 0.06 30);
-  --color-taupe-300: oklch(78% 0.08 30);
-  --color-taupe-400: oklch(65% 0.10 30);
-  --color-taupe-500: oklch(55% 0.12 30);
-  --color-taupe-600: oklch(50% 0.14 30);
-  --color-taupe-700: oklch(45% 0.12 30);
-  --color-taupe-800: oklch(40% 0.10 30);
-  --color-taupe-900: oklch(35% 0.08 30);
-  --color-taupe-950: oklch(25% 0.06 30);
+  /* Warm neutral - matching brand orange hue */
+  --color-taupe-50: oklch(97% 0.01 45);
+  --color-taupe-100: oklch(94% 0.02 45);
+  --color-taupe-200: oklch(88% 0.04 45);
+  --color-taupe-300: oklch(78% 0.06 45);
+  --color-taupe-400: oklch(65% 0.08 45);
+  --color-taupe-500: oklch(55% 0.10 45);
+  --color-taupe-600: oklch(50% 0.10 45);
+  --color-taupe-700: oklch(45% 0.08 45);
+  --color-taupe-800: oklch(40% 0.06 45);
+  --color-taupe-900: oklch(35% 0.04 45);
+  --color-taupe-950: oklch(25% 0.03 45);
 
-  /* Brand color - Rich burnt orange/red */
-  --color-brand-50: oklch(97% 0.02 30);
-  --color-brand-100: oklch(93% 0.06 30);
-  --color-brand-200: oklch(86% 0.12 30);
-  --color-brand-300: oklch(76% 0.16 30);
-  --color-brand-400: oklch(65% 0.18 30);
-  --color-brand-500: oklch(55% 0.20 30);
-  --color-brand-600: oklch(52% 0.22 30);
-  --color-brand-700: oklch(45% 0.19 30);
-  --color-brand-800: oklch(38% 0.15 30);
-  --color-brand-900: oklch(32% 0.12 30);
-  --color-brand-950: oklch(25% 0.08 30);
+  /* Brand color - #FF5300 vivid orange */
+  --color-brand-50: oklch(97% 0.01 45);
+  --color-brand-100: oklch(93% 0.04 45);
+  --color-brand-200: oklch(86% 0.08 45);
+  --color-brand-300: oklch(78% 0.14 45);
+  --color-brand-400: oklch(72% 0.20 45);
+  --color-brand-500: oklch(67% 0.24 45);
+  --color-brand-600: oklch(58% 0.22 45);
+  --color-brand-700: oklch(50% 0.18 45);
+  --color-brand-800: oklch(42% 0.14 45);
+  --color-brand-900: oklch(35% 0.10 45);
+  --color-brand-950: oklch(22% 0.05 45);
 }
 
 @layer base {
@@ -59,21 +59,30 @@
   }
 
   html.dark-page header {
-    background-color: #2a1810 !important;
+    background-color: var(--color-brand-700) !important;
   }
 
   html.dark-page footer {
-    background-color: #2a1810 !important;
+    background-color: var(--color-brand-700) !important;
+  }
+
+  html.dark-page header img,
+  html.dark-page footer img {
+    filter: brightness(0) invert(1);
   }
 }
 
 @layer utilities {
   .logo-monotone {
-    filter: brightness(0) saturate(100%) invert(35%) sepia(90%) saturate(1500%) hue-rotate(345deg) brightness(95%);
+    filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(2500%) hue-rotate(5deg) brightness(85%);
   }
 }
 
-/* ReactFlow overrides - replace default blue colors with brand */
+/* ReactFlow overrides */
+.react-flow__pane {
+  pointer-events: none !important;
+}
+
 .react-flow__handle {
   background-color: var(--color-brand-600) !important;
   border-color: var(--color-brand-600) !important;

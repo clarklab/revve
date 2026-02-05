@@ -27,7 +27,7 @@ export function HeroLeftAlignedWithDemo({
     <section className={clsx('relative py-16', className)} {...props}>
       {/* Full-width overlay element for flow diagram */}
       {sideElement && (
-        <div className="absolute inset-0 z-10 hidden overflow-visible lg:block">
+        <div className="pointer-events-none absolute inset-0 z-10 hidden overflow-visible lg:block">
           {sideElement}
         </div>
       )}

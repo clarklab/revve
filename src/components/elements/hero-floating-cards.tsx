@@ -156,7 +156,7 @@ function CallCard() {
           </div>
         </div>
         <div className="text-right">
-          <div className="font-mono text-xl font-semibold tabular-nums text-gray-900">{formattedTime}</div>
+          <div className="text-xl font-bold tabular-nums text-gray-900">{formattedTime}</div>
           <div className="text-xs text-gray-500">Duration</div>
         </div>
       </div>

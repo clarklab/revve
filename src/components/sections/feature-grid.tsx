@@ -13,11 +13,11 @@ function FeatureItem({
     <div className="flex flex-col gap-2">
       <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
         {icon}
-        <h3 className="font-display text-base font-semibold leading-snug text-white">
+        <h3 className="font-display text-base font-semibold leading-snug text-brand-900 dark:text-white">
           {title}
         </h3>
       </div>
-      <p className="text-sm text-white/80">{description}</p>
+      <p className="text-sm text-brand-700 dark:text-white/80">{description}</p>
     </div>
   )
 }
@@ -34,7 +34,7 @@ function UsersIcon() {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="inline-block h-5 w-5 text-white"
+      className="inline-block h-5 w-5 text-brand-600 dark:text-white"
     >
       <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
       <circle cx="9" cy="7" r="4" />
@@ -55,7 +55,7 @@ function MessageSquareIcon() {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="inline-block h-5 w-5 text-white"
+      className="inline-block h-5 w-5 text-brand-600 dark:text-white"
     >
       <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
     </svg>
@@ -73,7 +73,7 @@ function CircleCheckBigIcon() {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="inline-block h-5 w-5 text-white"
+      className="inline-block h-5 w-5 text-brand-600 dark:text-white"
     >
       <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
       <polyline points="22 4 12 14.01 9 11.01" />
@@ -92,7 +92,7 @@ function HeadphonesIcon() {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="inline-block h-5 w-5 text-white"
+      className="inline-block h-5 w-5 text-brand-600 dark:text-white"
     >
       <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
     </svg>
@@ -110,7 +110,7 @@ function SparklesIcon() {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="inline-block h-5 w-5 text-white"
+      className="inline-block h-5 w-5 text-brand-600 dark:text-white"
     >
       <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
       <path d="M5 3v4" />
@@ -132,7 +132,7 @@ function LayersIcon() {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="inline-block h-5 w-5 text-white"
+      className="inline-block h-5 w-5 text-brand-600 dark:text-white"
     >
       <path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z" />
       <path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65" />
@@ -143,8 +143,10 @@ function LayersIcon() {
 
 export function FeatureGrid() {
   return (
-    <div className="mt-8 rounded-2xl bg-brand-600 px-10 py-12 md:px-16 md:py-16">
-      <div className="grid grid-cols-2 gap-6 md:grid-cols-3">
+    <div className="rounded-2xl bg-brand-600/5 px-10 py-12 dark:bg-white/5 md:px-16 md:py-16">
+      <h2 className="font-display text-2xl font-semibold text-brand-950 dark:text-white">SEO Keyword Fodder</h2>
+      <p className="mb-10 mt-2 text-brand-700 dark:text-white/80">This is where we can stuff even more features, let&apos;s not miss a single selling point!</p>
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
       <FeatureItem
         icon={<UsersIcon />}
         title="Grow customers, not headcount."
@@ -174,21 +176,6 @@ export function FeatureGrid() {
         icon={<LayersIcon />}
         title="Omnichannel Agents."
         description="One conversation thread across voice, messaging (Zalo/WhatsApp/SMS), and handoffs, so every touchpoint continues with full history."
-      />
-      <FeatureItem
-        icon={<UsersIcon />}
-        title="Unified Contact Center."
-        description="When AI hands to a team member, they get an interaction summary that helps them resolve the case 2x faster with live assistance."
-      />
-      <FeatureItem
-        icon={<CircleCheckBigIcon />}
-        title="Reliability & Guardrails Built-In."
-        description="Set boundaries on what the AI can and can't say. Monitor live conversations for quality assurance."
-      />
-      <FeatureItem
-        icon={<HeadphonesIcon />}
-        title="Native Sounding Voice."
-        description="Proprietary voice model delivers sub-1-second response time with regional accents, tuned on banking conversations so calls feel natural."
       />
       </div>
     </div>

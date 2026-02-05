@@ -1,11 +1,10 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { Container } from '@/components/elements/container'
 import { Heading } from '@/components/elements/heading'
 import { Text } from '@/components/elements/text'
 import { BlogCard } from '@/components/elements/blog-card'
-import { CallToActionSimple } from '@/components/sections/call-to-action-simple'
-import { ButtonLink, PlainButtonLink } from '@/components/elements/button'
-import { ChevronIcon } from '@/components/icons/chevron-icon'
+import { ButtonLink } from '@/components/elements/button'
 import { getAllPosts } from '@/lib/blog/posts'
 
 export const metadata: Metadata = {
@@ -35,31 +34,50 @@ export default function BlogPage() {
         <Container>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {posts.map((post) => (
-              <BlogCard key={post.slug} slug={post.slug} title={post.title} category={post.category} excerpt={post.excerpt} image={post.image} />
+              <BlogCard key={post.slug} slug={post.slug} title={post.title} category={post.category} image={post.image} />
             ))}
           </div>
         </Container>
       </section>
 
       {/* Call To Action */}
-      <CallToActionSimple
-        headline="Ready to see it in action?"
-        subheadline={
-          <p>
-            Join hundreds of teams using Revve AI to respond faster, convert more leads, and close deals around the clock.
-          </p>
-        }
-        cta={
-          <div className="flex items-center gap-4">
-            <ButtonLink href="#" size="lg">
-              Book a Demo
-            </ButtonLink>
-            <PlainButtonLink href="#" size="lg">
-              See use cases <ChevronIcon />
-            </PlainButtonLink>
+      <section className="py-16">
+        <Container>
+          <div className="rounded-4xl bg-brand-600 px-8 py-14 sm:px-14 sm:py-20">
+            <h2 className="font-display text-3xl/9 font-medium tracking-[-0.03em] text-pretty text-white sm:text-[2.5rem]/10">
+              Ready to scale your customer operations?
+            </h2>
+            <div className="mt-8">
+              <figure className="flex flex-col items-start gap-1">
+                <div className="relative drop-shadow-sm">
+                  <div className="rounded-2xl bg-white/25 px-6 py-5">
+                    <blockquote className="text-pretty text-white/80">
+                      &ldquo;Revve AI&apos;s ability to provide a more natural, human-like response was a critical factor for us. It moves beyond the robotic interactions our customers dislike and allows for a more effective and positive re-engagement.&rdquo;
+                    </blockquote>
+                  </div>
+                  <svg className="ml-8 h-3 w-5 text-white/25" viewBox="0 0 20 12" fill="currentColor" preserveAspectRatio="none">
+                    <path d="M0 0L10 12L20 0Z" />
+                  </svg>
+                </div>
+                <figcaption className="mt-3 flex items-end gap-3 pl-6">
+                  <Image src="/img/logos/LOGO-VIB-Blue.png" alt="VIB" width={160} height={64} className="h-6 w-auto brightness-0 invert" />
+                  <span className="text-sm leading-none text-white/60">VIB Contact Center Manager</span>
+                </figcaption>
+              </figure>
+            </div>
+            <div className="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center">
+              <ButtonLink href="/request-demo" color="light" className="px-8 py-4 text-xl">
+                Book a Demo
+              </ButtonLink>
+              <ul className="flex flex-col gap-2 text-sm text-white/70 sm:flex-row sm:gap-4">
+                <li className="flex items-center gap-1.5"><svg className="size-4 text-white" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clipRule="evenodd" /></svg>30-min personalized demo</li>
+                <li className="flex items-center gap-1.5"><svg className="size-4 text-white" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clipRule="evenodd" /></svg>Custom ROI analysis</li>
+                <li className="flex items-center gap-1.5"><svg className="size-4 text-white" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clipRule="evenodd" /></svg>No commitment</li>
+              </ul>
+            </div>
           </div>
-        }
-      />
+        </Container>
+      </section>
     </>
   )
 }

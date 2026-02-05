@@ -11,7 +11,7 @@ export function Testimonial({
   ...props
 }: {
   quote: ReactNode
-  img: ReactNode
+  img?: ReactNode
   name: ReactNode
   byline: ReactNode
 } & ComponentProps<'blockquote'>) {
@@ -23,13 +23,15 @@ export function Testimonial({
       )}
       {...props}
     >
-      <blockquote className="relative flex flex-col gap-4 *:first:before:absolute *:first:before:inline *:first:before:-translate-x-full *:first:before:content-['“'] *:last:after:inline *:last:after:content-['”']">
+      <blockquote className={`relative flex flex-col gap-4 *:first:before:absolute *:first:before:inline *:first:before:-translate-x-full *:first:before:content-['\u201C'] *:last:after:inline *:last:after:content-['\u201D']`}>
         {quote}
       </blockquote>
       <figcaption className="flex items-center gap-4">
-        <div className="flex size-12 overflow-hidden rounded-full outline -outline-offset-1 outline-black/5 *:size-full *:object-cover dark:outline-white/5">
-          {img}
-        </div>
+        {img && (
+          <div className="flex size-12 overflow-hidden rounded-full outline -outline-offset-1 outline-black/5 *:size-full *:object-cover dark:outline-white/5">
+            {img}
+          </div>
+        )}
         <div>
           <p className="font-semibold">{name}</p>
           <p className="text-brand-700 dark:text-brand-400">{byline}</p>

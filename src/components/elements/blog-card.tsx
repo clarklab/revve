@@ -9,7 +9,6 @@ export function BlogCard({
   slug,
   title,
   category,
-  excerpt,
   image,
   className,
   ...props
@@ -17,7 +16,6 @@ export function BlogCard({
   slug: string
   title: string
   category: string
-  excerpt: string
   image: string
 } & ComponentProps<'article'>) {
   return (
@@ -28,12 +26,11 @@ export function BlogCard({
       )}
       {...props}
     >
-      <Link href={`/blog/${slug}`} className="block overflow-hidden rounded-2xl">
+      <Link href={`/blog/${slug}`} className="block aspect-[4/3] overflow-hidden rounded-2xl">
         <BlogImage
           src={image}
           alt={title}
-          className="transition-transform duration-300 group-hover:scale-105"
-          style={{ height: '180px', width: '100%' }}
+          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
       </Link>
       <div className="flex flex-1 flex-col gap-4 px-1 pt-5">
@@ -43,7 +40,6 @@ export function BlogCard({
             {title}
           </Link>
         </h2>
-        <p className="line-clamp-3 text-sm/6 text-brand-700 dark:text-brand-400">{excerpt}</p>
         <Link
           href={`/blog/${slug}`}
           className="mt-auto inline-flex items-center gap-2 text-sm/7 font-medium text-brand-700 transition-colors hover:text-brand-600 dark:text-white dark:hover:text-brand-300"

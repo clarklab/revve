@@ -16,7 +16,7 @@ export function InstallCommand({
   return (
     <div
       className={clsx(
-        'flex items-center justify-between gap-6 rounded-full p-1 font-mono text-sm/7 inset-ring-1 dark:bg-white/10 dark:inset-ring-white/10',
+        'flex items-center justify-between gap-6 rounded-full p-1 text-sm/7 font-bold inset-ring-1 dark:bg-white/10 dark:inset-ring-white/10',
         variant === 'normal' && 'bg-white text-brand-600 inset-ring-brand-600/10 dark:text-white',
         variant === 'overlay' && 'bg-white/15 text-white inset-ring-white/10',
         className,

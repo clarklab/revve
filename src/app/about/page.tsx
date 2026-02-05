@@ -193,11 +193,11 @@ export default function Page() {
         }
         cta={
           <div className="flex items-center gap-4">
-            <ButtonLink href="#" size="lg">
+            <ButtonLink href="/request-demo" size="lg">
               Chat with us
             </ButtonLink>
 
-            <PlainButtonLink href="#" size="lg">
+            <PlainButtonLink href="/request-demo" size="lg">
               Book a demo <ChevronIcon />
             </PlainButtonLink>
           </div>

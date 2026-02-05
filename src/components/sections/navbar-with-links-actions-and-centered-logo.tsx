@@ -66,7 +66,7 @@ export function NavbarDropdown({ label, children }: { label: string; children: R
       </button>
 
       {isOpen && (
-        <div className="absolute left-0 top-full z-50 mt-3 min-w-56 rounded-xl bg-white p-2 shadow-lg ring-1 ring-brand-600/5 dark:bg-brand-900 dark:ring-white/10">
+        <div className="absolute left-0 top-full z-50 mt-3 w-max rounded-xl bg-white p-2 shadow-lg ring-1 ring-brand-600/5 dark:bg-brand-900 dark:ring-white/10">
           <div className="flex flex-col">{children}</div>
         </div>
       )}
@@ -97,17 +97,26 @@ export function NavbarDropdownItem({
   href,
   title,
   description,
+  icon,
 }: {
   href: string
   title: string
   description?: string
+  icon?: React.ReactNode
 }) {
   return (
-    <Link href={href} className="group block rounded-lg px-3 py-2.5 hover:bg-brand-50 dark:hover:bg-white/5">
-      <div className="font-medium text-brand-900 group-hover:text-brand-600 dark:text-white dark:group-hover:text-brand-300">
-        {title}
+    <Link href={href} className="group flex items-start gap-3 rounded-lg px-3 py-2.5 hover:bg-brand-50 dark:hover:bg-white/5">
+      {icon && (
+        <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-brand-600/10 dark:bg-white/10">
+          {icon}
+        </div>
+      )}
+      <div>
+        <div className="font-medium text-brand-900 group-hover:text-brand-600 dark:text-white dark:group-hover:text-brand-300">
+          {title}
+        </div>
+        {description && <div className="-mt-0.5 whitespace-nowrap text-sm text-brand-500 dark:text-brand-400">{description}</div>}
       </div>
-      {description && <div className="mt-0.5 text-sm text-brand-500 dark:text-brand-400">{description}</div>}
     </Link>
   )
 }

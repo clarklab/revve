@@ -3,12 +3,12 @@ import type { BlogPost } from './types'
 
 // Map slugs to images
 const blogImages: Record<string, string> = {
-  'speed-to-lead': 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80',
-  'no-code-playbook': 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80',
-  'multi-channel': 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80',
-  '3am-lead': 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1200&q=80',
-  'chatbot-vs-agent': 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=1200&q=80',
-  'native-voice-announcement': 'https://images.unsplash.com/photo-1589254065878-42c9da997008?w=1200&q=80',
+  'speed-to-lead': '/img/blog/speed-to-lead.webp',
+  'no-code-playbook': '/img/blog/no-code-playbook.webp',
+  'multi-channel': '/img/blog/multi-channel.webp',
+  '3am-lead': '/img/blog/3am-lead.webp',
+  'chatbot-vs-agent': '/img/blog/chatbot-vs-agent.webp',
+  'native-voice-announcement': '/img/blog/native-voice-announcement.webp',
 }
 
 export function parseMarkdown(markdown: string, slug: string): BlogPost {
@@ -77,7 +77,7 @@ export function parseMarkdown(markdown: string, slug: string): BlogPost {
     excerpt,
     content,
     readingTime,
-    image: blogImages[slug] || 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80',
+    image: blogImages[slug] || '/img/blog/speed-to-lead.webp',
   }
 }
 
