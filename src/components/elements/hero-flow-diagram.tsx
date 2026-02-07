@@ -94,7 +94,7 @@ function VisitorDetectedNode({ data }: NodeProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: data.visible ? 1 : 0 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="w-40 rounded-lg border-2 border-brand-600 bg-brand-100 p-2.5 dark:border-brand-400 dark:bg-brand-950"
+      className="w-40 rounded-lg border-2 border-brand-600 bg-brand-100 p-2.5 shadow-[0_8px_40px_rgba(0,0,0,0.19)] dark:border-brand-400 dark:bg-brand-950"
     >
       <Handle type="source" position={Position.Right} className="!h-0 !w-0 !border-0 !bg-transparent" />
 
@@ -112,15 +112,15 @@ function VisitorDetectedNode({ data }: NodeProps) {
       {/* Metadata */}
       <div className="space-y-1 text-[10px] text-gray-500 dark:text-gray-400">
         <div className="flex items-center justify-between gap-2">
-          <span className="text-gray-400 dark:text-gray-500">Location</span>
+          <span className="font-medium text-brand-600 dark:text-brand-400">Location</span>
           <span className="whitespace-nowrap font-medium text-gray-700 dark:text-gray-300">Ho Chi Minh City</span>
         </div>
         <div className="flex items-center justify-between gap-2">
-          <span className="text-gray-400 dark:text-gray-500">Device</span>
+          <span className="font-medium text-brand-600 dark:text-brand-400">Device</span>
           <span className="whitespace-nowrap font-medium text-gray-700 dark:text-gray-300">iPhone 15 Pro</span>
         </div>
         <div className="flex items-center justify-between gap-2">
-          <span className="text-gray-400 dark:text-gray-500">Page</span>
+          <span className="font-medium text-brand-600 dark:text-brand-400">Page</span>
           <span className="whitespace-nowrap font-medium text-gray-700 dark:text-gray-300">/gift-cards</span>
         </div>
       </div>
@@ -135,7 +135,7 @@ function AgentInitializingNode({ data }: NodeProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: data.visible ? 1 : 0 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="w-48 rounded-lg border-2 border-brand-600 bg-brand-100 p-2.5 dark:border-brand-400 dark:bg-brand-950"
+      className="w-48 rounded-lg border-2 border-brand-600 bg-brand-100 p-2.5 shadow-[0_8px_40px_rgba(0,0,0,0.19)] dark:border-brand-400 dark:bg-brand-950"
     >
       <Handle type="target" position={Position.Left} className="!h-0 !w-0 !border-0 !bg-transparent" />
       <Handle type="source" position={Position.Right} className="!h-0 !w-0 !border-0 !bg-transparent" />
@@ -156,7 +156,7 @@ function AgentInitializingNode({ data }: NodeProps) {
       {/* Status */}
       <div className="flex items-center gap-1.5 rounded-md bg-brand-50 px-2 py-1.5 dark:bg-brand-900/30">
         <Typewriter
-          words={['Preparing...', 'Context...', 'Timing...']}
+          words={['Contacting bank systems...', 'Securing connection...', 'Account context loaded...']}
           typingSpeed={40}
           deletingSpeed={25}
           pauseBeforeDelete={800}
@@ -174,7 +174,7 @@ function VoiceChatNode({ data }: NodeProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: data.visible ? 1 : 0 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="w-56 rounded-lg border-2 border-brand-600 bg-brand-100 p-2.5 dark:border-brand-400 dark:bg-brand-950"
+      className="w-64 rounded-lg border-2 border-brand-600 bg-brand-100 p-2.5 shadow-[0_8px_40px_rgba(0,0,0,0.19)] dark:border-brand-400 dark:bg-brand-950"
     >
       <Handle type="target" position={Position.Right} className="!h-0 !w-0 !border-0 !bg-transparent" />
 
@@ -192,9 +192,13 @@ function VoiceChatNode({ data }: NodeProps) {
       </div>
 
       {/* CTA Button */}
-      <button className="pointer-events-auto flex w-full items-center justify-center gap-1.5 whitespace-nowrap rounded bg-brand-950 px-3 py-1 text-sm/7 font-medium text-white transition-colors hover:bg-brand-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100">
-        <svg className="h-3.5 w-3.5" viewBox="0 0 153 204" fill="none"><path d="M99.9 82.8L43.2 26.1L69.3 0L152.1 82.8L69.3 165.6L43.2 139.5L99.9 82.8Z" fill="currentColor"/><path d="M108.9 203.4L78.3 172.8L108.9 142.2L139.5 172.8L108.9 203.4Z" fill="currentColor"/><path d="M34.2 131.4V203.4H0V113.4L57.6 57.6L82.8 82.8L34.2 131.4Z" fill="currentColor"/></svg>
-        Chat with Revve Agent
+      <button className="pointer-events-auto flex w-full items-center justify-center gap-2 whitespace-nowrap rounded bg-brand-950 px-6 py-1.5 text-sm/7 font-medium text-white transition-colors hover:bg-brand-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100">
+        <svg width="12" height="16" viewBox="0 0 74 99" fill="none" className="shrink-0">
+          <path d="M48.5514 40.2408L20.9952 12.6846L33.6798 0L73.9206 40.2408L33.6798 80.4816L20.9952 67.797L48.5514 40.2408Z" fill="white"/>
+          <path d="M52.9254 98.8524L38.0538 83.9808L52.9254 69.1092L67.797 83.9808L52.9254 98.8524Z" fill="white"/>
+          <path d="M16.6212 63.8604V98.8524H0V55.1124L27.9936 27.9936L40.2408 40.2408L16.6212 63.8604Z" fill="white"/>
+        </svg>
+        Incoming Call from Revve
       </button>
     </motion.div>
   )
@@ -212,19 +216,19 @@ const initialNodes: Node[] = [
   {
     id: 'visitor',
     type: 'visitorDetected',
-    position: { x: 114, y: -269 },
+    position: { x: 114, y: 51 },
     data: { visible: false },
   },
   {
     id: 'agent',
     type: 'agentInitializing',
-    position: { x: 322, y: -229 },
+    position: { x: 322, y: 91 },
     data: { visible: false },
   },
   {
     id: 'voiceChat',
     type: 'voiceChat',
-    position: { x: 243, y: -123 },
+    position: { x: 243, y: 197 },
     data: { visible: false },
   },
 ]
@@ -352,7 +356,7 @@ export function HeroFlowDiagram() {
       ref={ref}
       className={`absolute inset-0 overflow-visible ${DEV_MODE ? '' : 'pointer-events-none'}`}
     >
-      <div className={`absolute right-12 top-0 z-20 h-[400px] w-[600px] ${DEV_MODE ? 'pointer-events-auto' : ''}`}>
+      <div className={`absolute right-12 top-40 z-20 h-[400px] w-[600px] ${DEV_MODE ? 'pointer-events-auto' : ''}`}>
         <ReactFlow
           nodes={nodes}
           edges={edges}
