@@ -39,6 +39,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: var(--color-brand-50);
+    scroll-behavior: smooth;
     --scroll-padding-top: 0;
     scroll-padding-top: var(--scroll-padding-top);
     accent-color: var(--color-brand-600);
@@ -74,7 +75,44 @@
 
 @layer utilities {
   .logo-monotone {
-    filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(2500%) hue-rotate(5deg) brightness(85%);
+    filter: brightness(0) saturate(100%) invert(25%) sepia(90%) saturate(1800%) hue-rotate(10deg) brightness(70%);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .animate-marquee {
+    animation: marquee 60s linear infinite;
+    will-change: transform;
+  }
+
+  .animate-marquee-reverse {
+    animation: marquee-reverse 60s linear infinite;
+    will-change: transform;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
   }
 }
 
