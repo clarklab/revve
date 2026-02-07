@@ -128,17 +128,14 @@ function FeatureScrollItem({
   feature,
   isActive,
   onClick,
-  itemRef,
 }: {
   feature: Feature
   isActive: boolean
   onClick: () => void
-  itemRef?: (el: HTMLDivElement | null) => void
 }) {
   const Icon = feature.icon
   return (
     <div
-      ref={itemRef}
       onClick={onClick}
       className={clsx(
         'flex w-full cursor-pointer gap-x-3 rounded-lg p-4 text-left text-base/7 transition-all duration-500',
@@ -206,42 +203,6 @@ export function FeatureTwoColumnWithScreenshot({
 }: ComponentProps<'section'>) {
   const [activeIndex, setActiveIndex] = useState(0)
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
-  const sectionRef = useRef<HTMLDivElement>(null)
-  const featureItemRefs = useRef<(HTMLDivElement | null)[]>([])
-  const [listTranslateY, setListTranslateY] = useState(0)
-
-  // Scroll-progress-driven active index (desktop)
-  useEffect(() => {
-    const section = sectionRef.current
-    if (!section) return
-
-    function onScroll() {
-      if (!section) return
-      const rect = section.getBoundingClientRect()
-      const sectionHeight = rect.height
-      // How far we've scrolled into the section (0 at top, sectionHeight at bottom)
-      const scrolled = -rect.top
-      // Normalise to 0–1 progress
-      const progress = Math.max(0, Math.min(1, scrolled / (sectionHeight - window.innerHeight)))
-      const idx = Math.min(
-        FEATURES.length - 1,
-        Math.floor(progress * FEATURES.length),
-      )
-      setActiveIndex(idx)
-    }
-
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  // Translate the feature list so the active item stays in the same slot
-  useEffect(() => {
-    const activeEl = featureItemRefs.current[activeIndex]
-    const firstEl = featureItemRefs.current[0]
-    if (activeEl && firstEl) {
-      setListTranslateY(-(activeEl.offsetTop - firstEl.offsetTop))
-    }
-  }, [activeIndex])
 
   // Pause inactive videos, play + reset active video
   useEffect(() => {
@@ -261,48 +222,38 @@ export function FeatureTwoColumnWithScreenshot({
       className={clsx('relative isolate py-16', className)}
       {...props}
     >
-      {/* Desktop: tall scroll runway with sticky two-column content */}
-      <div ref={sectionRef} className="hidden lg:block lg:-mb-[50vh]" style={{ height: `calc(${FEATURES.length * 100}vh + 10vh)` }}>
-        <div className="sticky top-0">
-          <Container>
-            <div className="grid grid-cols-2 items-start gap-x-16 py-16">
-              {/* Left column – header + feature list */}
-              <div>
-                <Eyebrow>Built For Scale</Eyebrow>
-                <h2 className="mt-2 font-display text-4xl font-semibold tracking-tight text-pretty text-taupe-950 sm:text-5xl dark:text-white">
-                  Everything needed to scale operations
-                </h2>
-                <p className="mt-6 text-xl/8 text-taupe-700 dark:text-taupe-300">
-                  Deploy AI agents that scale operations and delight customers, all
-                  with no code. We don&apos;t mean <em>low code</em>, we mean{' '}
-                  <strong>literally no code</strong>.
-                </p>
-                <div className="mt-10 overflow-hidden">
-                  <div
-                    className="space-y-2 transition-transform duration-500 ease-out"
-                    style={{ transform: `translateY(${listTranslateY}px)` }}
-                  >
-                    {FEATURES.map((feature, i) => (
-                      <FeatureScrollItem
-                        key={i}
-                        feature={feature}
-                        isActive={i === activeIndex}
-                        onClick={() => setActiveIndex(i)}
-                        itemRef={(el) => { featureItemRefs.current[i] = el }}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Right column – media pane */}
-              <div className="mt-32">
-                <MediaContainer activeIndex={activeIndex} videoRefs={videoRefs} />
-              </div>
+      {/* Desktop: two-column with sticky preview pane */}
+      <Container className="hidden lg:block">
+        <div className="grid grid-cols-2 items-start gap-x-16 py-16">
+          {/* Left column – header + feature list */}
+          <div>
+            <Eyebrow>Built For Scale</Eyebrow>
+            <h2 className="mt-2 font-display text-4xl font-semibold tracking-tight text-pretty text-taupe-950 sm:text-5xl dark:text-white">
+              Everything needed to scale operations
+            </h2>
+            <p className="mt-6 text-xl/8 text-taupe-700 dark:text-taupe-300">
+              Deploy AI agents that scale operations and delight customers, all
+              with no code. We don&apos;t mean <em>low code</em>, we mean{' '}
+              <strong>literally no code</strong>.
+            </p>
+            <div className="mt-10 space-y-2">
+              {FEATURES.map((feature, i) => (
+                <FeatureScrollItem
+                  key={i}
+                  feature={feature}
+                  isActive={i === activeIndex}
+                  onClick={() => setActiveIndex(i)}
+                />
+              ))}
             </div>
-          </Container>
+          </div>
+
+          {/* Right column – sticky media pane */}
+          <div className="sticky top-24">
+            <MediaContainer activeIndex={activeIndex} videoRefs={videoRefs} />
+          </div>
         </div>
-      </div>
+      </Container>
 
       {/* Mobile: stacked layout */}
       <Container className="lg:hidden">

@@ -14,8 +14,10 @@ import { FeaturesBentoGrid } from '@/components/sections/features-bento-grid'
 import { HeroLeftAlignedWithDemo } from '@/components/sections/hero-left-aligned-with-demo'
 import { Plan, PricingMultiTier } from '@/components/sections/pricing-multi-tier'
 import { FeatureTwoColumnWithScreenshot } from '@/components/sections/feature-two-column-with-screenshot'
-import { Testimonial, TestimonialThreeColumnGrid } from '@/components/sections/testimonials-three-column-grid'
+import { TestimonialsMarquee } from '@/components/sections/testimonials-marquee'
 import { FeatureGrid } from '@/components/sections/feature-grid'
+import { TestimonialCarousel } from '@/components/sections/testimonial-carousel'
+import { UseCasesScroll } from '@/components/sections/use-cases-scroll'
 
 export default function Page() {
   return (
@@ -23,7 +25,7 @@ export default function Page() {
       {/* Hero */}
       <HeroLeftAlignedWithDemo
         id="hero"
-        eyebrow={<AnnouncementBadge href="/blog/native-voice-announcement" text={<><strong>New</strong>: Revve Native Voice is live</>} cta="Read more" />}
+        eyebrow={<span className="inline-flex rounded-full bg-brand-600/10 px-3 py-1 text-sm font-medium text-brand-700 dark:bg-white/5 dark:text-white">The AI platform trusted by banks</span>}
         headline={<>AI-powered customer<br className="hidden lg:block" /> ops for BFSI.</>}
         subheadline={
           <p>
@@ -36,7 +38,7 @@ export default function Page() {
               Book a Demo
             </ButtonLink>
 
-            <PlainButtonLink href="#" size="lg">
+            <PlainButtonLink href="#use-cases" size="lg">
               See use cases <ArrowNarrowRightIcon />
             </PlainButtonLink>
           </div>
@@ -92,53 +94,26 @@ export default function Page() {
           </div>
         }
       />
+      {/* Testimonial Carousel */}
+      <TestimonialCarousel id="testimonial-carousel" />
       {/* Features */}
       <FeaturesBentoGrid id="features" />
       {/* Built For Scale */}
       <FeatureTwoColumnWithScreenshot id="built-for-scale" />
+      {/* Use Cases */}
+      <UseCasesScroll id="use-cases" />
       {/* Feature Grid */}
       <section className="py-16">
         <Container>
           <FeatureGrid />
         </Container>
       </section>
-      {/* Testimonial */}
-      <TestimonialThreeColumnGrid
+      {/* Testimonials Marquee */}
+      <TestimonialsMarquee
         id="testimonial"
         headline="What our customers are saying"
         subheadline={<p>We've given these customers a significant discount in exchange for their honest reviews.</p>}
-      >
-        <Testimonial
-          quote={
-            <p>
-              We love how the AI agents sounds both in chat and in phone call. We look forward to expanding Revve to other aspects of Dropoff business
-            </p>
-          }
-          img={<Image src="/img/photos/photo-sean-spector.webp" alt="" className="not-dark:bg-white/75 dark:bg-black/75" width={160} height={160} />}
-          name="Sean Spector"
-          byline="CEO"
-        />
-        <Testimonial
-          quote={
-            <p>
-              Revve&apos;s dramatically improving our time-to-first-touch for leads and letting sales focus on closing, not chasing.
-            </p>
-          }
-          img={<Image src="/img/photos/photo-mary-comer.webp" alt="" className="not-dark:bg-white/75 dark:bg-black/75" width={160} height={160} />}
-          name="Marcy Comer"
-          byline="CMO"
-        />
-        <Testimonial
-          quote={
-            <p>
-              Revve AI agents not only wow our customers when they get instant response but can also close deals
-            </p>
-          }
-          img={<Image src="/img/photos/photo-linh-tahi.webp" alt="" className="not-dark:bg-white/75 dark:bg-black/75" width={160} height={160} />}
-          name="Linh Thai"
-          byline="CEO"
-        />
-      </TestimonialThreeColumnGrid>
+      />
       {/* FAQs */}
       <FAQsTwoColumnAccordion
         id="faqs"

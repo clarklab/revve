@@ -30,7 +30,7 @@ export function Wallpaper({
     <div
       data-color={color}
       className={clsx(
-        'relative overflow-hidden bg-linear-to-b data-[color=brand]:from-brand-600 data-[color=brand]:to-brand-600 data-[color=brown]:from-[#8d7359] data-[color=brown]:to-[#765959] data-[color=green]:from-[#9ca88f] data-[color=green]:to-[#596352] data-[color=purple]:from-[#7b627d] data-[color=purple]:to-[#8f6976] dark:data-[color=brand]:from-brand-700 dark:data-[color=brand]:to-brand-700 dark:data-[color=brown]:from-[#382d23] dark:data-[color=brown]:to-[#3d2323] dark:data-[color=green]:from-[#333a2b] dark:data-[color=green]:to-[#26361b] dark:data-[color=purple]:from-[#412c42] dark:data-[color=purple]:to-[#3c1a26]',
+        'relative overflow-hidden bg-linear-to-b data-[color=brand]:from-brand-700 data-[color=brand]:to-brand-700 data-[color=brown]:from-[#8d7359] data-[color=brown]:to-[#765959] data-[color=green]:from-[#9ca88f] data-[color=green]:to-[#596352] data-[color=purple]:from-[#7b627d] data-[color=purple]:to-[#8f6976] dark:data-[color=brand]:from-brand-800 dark:data-[color=brand]:to-brand-800 dark:data-[color=brown]:from-[#382d23] dark:data-[color=brown]:to-[#3d2323] dark:data-[color=green]:from-[#333a2b] dark:data-[color=green]:to-[#26361b] dark:data-[color=purple]:from-[#412c42] dark:data-[color=purple]:to-[#3c1a26]',
         className,
       )}
       {...props}

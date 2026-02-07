@@ -4,9 +4,32 @@ import Link from 'next/link'
 
 import { ElDialog, ElDialogPanel, ElDisclosure } from '@tailwindplus/elements/react'
 import { clsx } from 'clsx/lite'
-import { type ComponentProps, type ReactNode, useEffect, useRef, useState } from 'react'
+import { type ComponentProps, type ReactNode, useEffect, useRef, useState, useCallback } from 'react'
 
 import { ChevronDownIcon } from '../icons/chevron-down-icon'
+
+function useScrollOpacity(startPx: number, endPx: number) {
+  const [opacity, setOpacity] = useState(0)
+
+  const handleScroll = useCallback(() => {
+    const scrollY = window.scrollY
+    if (scrollY <= startPx) {
+      setOpacity(0)
+    } else if (scrollY >= endPx) {
+      setOpacity(1)
+    } else {
+      setOpacity((scrollY - startPx) / (endPx - startPx))
+    }
+  }, [startPx, endPx])
+
+  useEffect(() => {
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [handleScroll])
+
+  return opacity
+}
 
 export function NavbarLink({
   children,
@@ -154,10 +177,22 @@ export function NavbarWithLinksActionsAndCenteredLogo({
   logo: ReactNode
   actions: ReactNode
 } & ComponentProps<'header'>) {
+  // Start fading in at 64px (4rem), fully opaque by 128px (8rem)
+  const bgOpacity = useScrollOpacity(64, 128)
+
   return (
-    <header className={clsx('sticky top-0 z-10 bg-brand-50 dark:bg-brand-950', className)} {...props}>
+    <header
+      className={clsx('relative sticky top-0 z-10', className)}
+      {...props}
+    >
+      {/* Background layer with scroll-based opacity */}
+      <div
+        className="absolute inset-0 bg-brand-50 dark:bg-brand-950"
+        aria-hidden="true"
+        style={{ opacity: bgOpacity }}
+      />
       <style>{`:root { --scroll-padding-top: 5.25rem }`}</style>
-      <nav>
+      <nav className="relative">
         <div className="mx-auto flex h-(--scroll-padding-top) max-w-7xl items-center gap-4 px-6 lg:px-10">
           <div className="flex items-center">{logo}</div>
           <div className="flex flex-1 translate-y-0.5 gap-6 pl-4 max-lg:hidden">{links}</div>

@@ -98,7 +98,7 @@ export function FeaturesBentoGrid({
   return (
     <section className={clsx('py-16', className)} {...props}>
       <Container className="flex flex-col gap-10 sm:gap-16">
-        <div className="flex max-w-2xl flex-col gap-6">
+        <div className="mx-auto flex max-w-3xl flex-col gap-6 text-center">
           <div className="flex flex-col gap-2">
             <Eyebrow>Revve does it all</Eyebrow>
             <Subheading>Automate customer operations across all channels from one platform</Subheading>
